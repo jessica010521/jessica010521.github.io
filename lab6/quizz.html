@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles.css">
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Quão bem conheces Ponte de Lima?</title>
+</head>
+<body>
+<header>
+    <h1>Quizz</h1>
+</header>
+<main>
+    <form method="get" action="https://postman-echo.com/get">
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required autofocus>
+          <br>
+          <label for="apelido">Apelido:</label>
+          <input type="text" id="apelido" name="apelido" required>
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </fieldset>
+    </form>
+
+    <fieldset>
+        <legend>Quizz sobre Ponte de Lima</legend>
+        <p>Qual é o rio que atravessa Ponte de Lima?</p>
+        <input type="radio" id="rio-lima" name="rio" value="rio-lima" required>
+        <label for="rio-lima">Rio Lima</label>
+        <input type="radio" id="rio-vizela" name="rio" value="rio-vizela" required>
+        <label for="rio-vizela">Rio Vizela</label>
+        <br>
+        <p>Qual é o principal produto agrícola de Ponte de Lima?</p>
+        <input type="checkbox" id="vinho" name="produto" value="vinho" required>
+        <label for="vinho">Vinho</label>
+        <input type="checkbox" id="frutas" name="produto" value="frutas" required>
+        <label for="frutas">Frutas</label>
+        <br>
+        <p>Em que ano foi fundada a cidade de Ponte de Lima?</p>
+        <input type="date" id="fundacao" name="fundacao" value="" required>
+        <br>
+        <p>Qual é o horário de funcionamento do Mercado Municipal de Ponte de Lima?</p>
+        <input type="time" id="horario-mercado" name="horario-mercado" value="" required>
+        <br>
+        <p>Qual é a cor oficial da cidade de Ponte de Lima?</p>
+        <input type="color" id="cor-oficial" name="cor-oficial" value="" required>
+        <br>
+        <p>Quantos distritos tem a cidade de Ponte de Lima?</p>
+        <input type="number" id="distritos" name="distritos" value="" required min="1" max="10" step="1">
+        <br>
+        <p>Como você avalia a qualidade de vida em Ponte de Lima?</p>
+        <input type="range" id="qualidade-vida" name="qualidade-vida" value="" required min="1" max="5" step="1">
+        <br>
+        <p>Envie uma foto de seu local favorito em Ponte de Lima:</p>
+        <input type="image" id="local-favorito" name="local-favorito" value="" required>
+        <br>
+        <p>Conte sobre sua experiência em Ponte de Lima:</p>
+        <textarea id="experiencia" name="experiencia" required placeholder="Insira sua experiência"></textarea>
+        <br>
+        <p>Selecione sua atividade favorita em Ponte de Lima:</p>
+        <input list="atividades" id="atividade" name="atividade" value="" required>
+        <datalist id="atividades">
+          <option value="Caminhada">
+          <option value="Visita ao Museu">
+          <option value="Degustação de vinhos">
+        </datalist>
+        <br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Enviar">
+      </fieldset>
+    </form>
+
+</main>
+
+<footer>
+    <p>DIW 2024</p>
+</footer>
+</body>
+</html>

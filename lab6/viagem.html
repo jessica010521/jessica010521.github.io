@@ -1,0 +1,50 @@
+<form method="get" action="https://postman-echo.com/get">
+    <fieldset>
+      <legend>Informações Pessoais</legend>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" value="" placeholder="Insira seu nome" autocomplete="on" size="20" maxlength="50" required autofocus>
+      <br>
+      <label for="apelido">Apelido:</label>
+      <input type="text" id="apelido" name="apelido" value="" placeholder="Insira seu apelido" autocomplete="on" size="20" maxlength="50" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="" placeholder="Insira seu email" autocomplete="on" size="20" maxlength="50" required>
+    </fieldset>
+  
+    <fieldset>
+      <legend>Informações de Viagem</legend>
+      <label for="data-partida">Data de partida:</label>
+      <input type="date" id="data-partida" name="data-partida" value="" required>
+      <br>
+      <label for="data-regresso">Data de regresso:</label>
+      <input type="date" id="data-regresso" name="data-regresso" value="" required>
+      <br>
+      <label for="numero-passageiros">Número de passageiros:</label>
+      <input type="number" id="numero-passageiros" name="numero-passageiros" value="" required min="1" max="10" step="1">
+      <br>
+      <p>Meio de transporte favorito:</p>
+      <input type="radio" id="carro" name="meio-transporte" value="carro" required>
+      <label for="carro">Carro</label>
+      <input type="radio" id="comboio" name="meio-transporte" value="comboio" required>
+      <label for="comboio">Comboio</label>
+      <input type="radio" id="aviao" name="meio-transporte" value="aviao" required>
+      <label for="aviao">Avião</label>
+      <input type="radio" id="outro" name="meio-transporte" value="outro" required>
+      <label for="outro">Outro</label>
+      <br>
+      <p>Qual o serviço que deseja na sua viagem:</p>
+      <input type="radio" id="basico" name="servico" value="basico" required>
+      <label for="basico">Básico</label>
+      <input type="radio" id="premium" name="servico" value="premium" required>
+      <label for="premium">Premium</label>
+      <br>
+      <label for="pedidos-especiais">Pedidos especiais:</label>
+      <textarea id="pedidos-especiais" name="pedidos-especiais" required placeholder="Insira seus pedidos especiais"></textarea>
+      <br>
+      <label for="valor-gasto">Valor que espera gastar por pessoa e por dia:</label>
+      <input type="number" id="valor-gasto" name="valor-gasto" value="" required min="1" max="1000" step="1">
+    </fieldset>
+  
+    <input type="reset" value="Reset">
+    <input type="submit" value="Enviar">
+  </form>
