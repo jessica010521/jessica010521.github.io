@@ -79,7 +79,7 @@ table, th, td {
     border-radius: 8px;
 }
 
-/* Ajustes de layout para seguir a imagem enviada */
+
 .list, .ordered-list, .iframe, .table {
     height: auto;
     min-height: 80px;
