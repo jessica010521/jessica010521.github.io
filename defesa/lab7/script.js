@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const botaoIniciarJogo = document.getElementById("iniciar-jogo");
     const tabuleiro = document.getElementById("tabuleiro");
     const controle = document.getElementById("controle");
+    const seletorCorCasas = document.getElementById("cor-casas");
 
     // Evento para iniciar o jogo com os nomes dos jogadores
     botaoIniciarJogo.addEventListener("click", () => {
@@ -20,12 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
         nomeJogadorX = inputJogadorX || "Jogador X";
         nomeJogadorO = inputJogadorO || "Jogador O";
         
+        // Muda a cor das casas para a cor selecionada
+        casas.forEach(casa => {
+            casa.style.backgroundColor = seletorCorCasas.value;
+        });
+
         // Esconde a área de entrada de nomes e exibe o tabuleiro e controles
         document.getElementById("nome-jogadores").style.display = "none";
         tabuleiro.style.display = "grid";
         controle.style.display = "block";
         
-        mensagem.innerText = `Vez de ${nomeJogadorX}`;
+        mensagem.innerText = `Vez do ${nomeJogadorX}`;
     });
 
     // Adiciona eventos de clique nas casas
@@ -75,11 +81,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function reiniciarJogo() {
+        // Reseta o conteúdo das casas e o estado do jogo
         casas.forEach(casa => {
             casa.innerText = "";
+            casa.style.backgroundColor = "#ffffff"; // Restaura a cor padrão das casas
         });
         jogadorAtual = "X";
         fimDeJogo = false;
-        mensagem.innerText = `Vez do ${nomeJogadorX}`;
+
+        // Mostra a área de entrada de nomes e esconde o tabuleiro e controles
+        document.getElementById("nome-jogadores").style.display = "block";
+        tabuleiro.style.display = "none";
+        controle.style.display = "none";
+
+        // Limpa o campo de mensagem
+        mensagem.innerText = "";
     }
 });
