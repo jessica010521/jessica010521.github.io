@@ -5,18 +5,19 @@ body {
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #c2f18b;
+    background-color: #d6ec83;
     margin: 0;
 }
 
 #controle {
-    align-items: center; 
+    margin-top: 20px;
+    text-align: center;
 }
 
 #mensagem {
     font-size: 1.2em;
-    color: #000000;
-   
+    color: #333;
+    margin-bottom: 10px;
 }
 
 #reiniciar {

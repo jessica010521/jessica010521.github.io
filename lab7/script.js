@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tabuleiro.style.display = "grid";
         controle.style.display = "block";
         
-        mensagem.innerText = `Vez do ${nomeJogadorX}`;
+        mensagem.innerText = `Vez de ${nomeJogadorX}`;
     });
 
     // Adiciona eventos de clique nas casas
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (checarVencedor()) {
                 const vencedor = jogadorAtual === "X" ? nomeJogadorX : nomeJogadorO;
                 mensagem.innerText = `${vencedor} venceu!`;
-                alert(`${vencedor} venceu!`); // Exibe o alert com o vencedor
+                alert(`${vencedor} venceu!`); 
                 fimDeJogo = true;
             } else if (empate()) {
                 mensagem.innerText = "Empate!";
