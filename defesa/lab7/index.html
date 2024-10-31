@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha Simples</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+    <div id="nome-jogadores">
+        <input type="text" id="jogadorX" placeholder="Nome do jogador X">
+        <input type="text" id="jogadorO" placeholder="Nome do jogador O">
+        <button id="iniciar-jogo">Iniciar Jogo</button>
+    </div>
+
+    <div id="tabuleiro" style="display: none;">
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+    </div>
+
+    <div id="controle" style="display: none;">
+        <div id="mensagem">Vez de jogador X</div>
+        <button id="reiniciar">Reiniciar Jogo</button> <!-- Botão para reiniciar o jogo -->
+    </div>
+
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript externo -->
+</body>
+</html>

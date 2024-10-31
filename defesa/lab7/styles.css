@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+.casa {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+#controle {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#mensagem {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#reiniciar {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#reiniciar:hover {
+    background-color: #555;
+}
+
+#nome-jogadores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#nome-jogadores input {
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+#nome-jogadores button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#nome-jogadores button:hover {
+    background-color: #555;
+}
