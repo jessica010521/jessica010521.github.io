@@ -1,3 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interatividade com JavaScript</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1 id="hoverMessage">1.Passa por aqui!</h1>
+    
+    <h2 id="paintMe">2.Pinta-me</h2>
+    <button onclick="changeColor('red')">Red</button>
+    <button onclick="changeColor('blue')">Blue</button>
+    <button onclick="changeColor('green')">Green</button>
 
+    <h2>3.Experimenta escrever...</h2>
+    <input type="text" id="typeBox" placeholder="alguma coisa...">
+
+    <h2>4.Escreva uma cor em inglês</h2>
+    <input type="text" id="colorInput" placeholder="Escolha uma cor em inglês:">
+    <button onclick="changeBackgroundColor()">Submeter</button>
+
+    <h2>5.Conta!</h2>
+    <button onclick="incrementCount()">Conta</button>
+    <span id="countDisplay">0</span>
+
+    <p>
+        <a href="/lab7/eventos.html">Jogo do Galo</a>
+    </p>
+</body>
+</html>
