@@ -43,9 +43,17 @@ function changeBackgroundColor(selectElement) {
 
 // 5. Contador que incrementa ao clicar
 let count = 0;
+
+function loadCount() {
+    const savedCount = localStorage.getItem("counterValue");
+    count = savedCount ? parseInt(savedCount) : 0;
+    document.getElementById("countDisplay").innerText = count;
+}
+
 function incrementCount() {
     count++;
     document.getElementById("countDisplay").innerText = count;
+    localStorage.setItem("counterValue", count);
 }
 
 // 6. Exibir mensagem com nome e idade
@@ -63,7 +71,7 @@ function displayGreeting() {
 
 // 7. Contador automático
 let autoCount = 0;
-function startAutoCounter() {
+const startAutoCounter = () => {
     setInterval(() => {
         autoCount++;
         document.getElementById("autoCounter").innerText = autoCount;
@@ -72,3 +80,5 @@ function startAutoCounter() {
 
 // Iniciar o contador automático ao carregar a página
 window.onload = startAutoCounter;
+loadCount(); // Carrega o valor do contador do Local Storage
+startAutoCounter(); // Inicia o contador automático
