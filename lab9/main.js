@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const productCard = document.createElement("article");
         productCard.className = "product-card";
         productCard.innerHTML = `
-          <img src="${product.image}" alt="Imagem de ${product.title}">
           <h3>${product.title}</h3>
-          <p>${product.description}</p>
+          <img src="${product.image}" alt="Imagem de ${product.title}">
           <p><strong>Preço:</strong> $${product.price.toFixed(2)}</p>
+          <p>${product.description}</p>
           <button class="cart-button">${isInCart(product) ? "Remover do Cesto" : "Adicionar ao Cesto"}</button>
         `;
   
