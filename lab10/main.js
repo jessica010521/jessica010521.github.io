@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Exibir o cesto
   function displayCart() {
     const cartContainer = document.getElementById("cart-container");
     cartContainer.innerHTML = ""; // Limpar o cesto
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       cart.forEach(product => {
         const cartItem = document.createElement("article");
-        cartItem.className = "product-card"; // Reutilizamos a mesma classe dos produtos
+        cartItem.className = "product-card"; // Reutilizamos o estilo dos produtos
         cartItem.innerHTML = `
           <h3>${product.title}</h3>
           <img src="${product.image}" alt="Imagem de ${product.title}">
@@ -64,16 +63,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const removeButton = cartItem.querySelector(".remove-button");
         removeButton.addEventListener("click", function () {
           cart = cart.filter(item => item.id !== product.id); // Remove do cesto
-          displayProducts(products); // Atualiza a lista de produtos
+          displayProducts(products); // Atualiza os produtos
           displayCart(); // Atualiza o cesto
         });
   
-        cartContainer.appendChild(cartItem); // Adiciona ao container do cesto
+        cartContainer.appendChild(cartItem); // Adiciona ao container
       });
+  
+      // Calcular o total
+      const total = cart.reduce((sum, product) => sum + product.price, 0).toFixed(2);
+  
+      // Adicionar o total abaixo do cesto
+      const totalDiv = document.createElement("div");
+      totalDiv.className = "cart-total";
+      totalDiv.innerHTML = `<h3>Total: $${total}</h3>`;
+      cartContainer.appendChild(totalDiv);
     }
   }
-  
-
   // Carregar produtos da API
   fetch('https://deisishop.pythonanywhere.com/products/')
  .then(response=>response.json())

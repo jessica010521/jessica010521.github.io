@@ -107,6 +107,15 @@ header {
   height: auto;
 }
 
+.cart-total {
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  color: black; /* Garante que o texto é visível */
+}
+
+
   
   /* Rodapé */
   footer {
