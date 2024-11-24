@@ -19,6 +19,27 @@
     </nav>
   </header>
 
+  <!-- Seção de Filtros -->
+<section id="filter-section" class="filter-section">
+  <label for="category-filter">Categoria:</label>
+  <select id="category-filter">
+    <option value="">Todas</option>
+    <option value="eletronicos">Eletrônicos</option>
+    <option value="roupas">Roupas</option>
+    <option value="acessorios">Acessórios</option>
+  </select>
+
+  <label for="price-filter">Ordenar por preço:</label>
+  <select id="price-filter">
+    <option value="asc">Menor para Maior</option>
+    <option value="desc">Maior para Menor</option>
+  </select>
+
+  <label for="search-input">Procurar:</label>
+  <input type="text" id="search-input" placeholder="Procurar por nome...">
+</section>
+
+
   <!-- Container para a lista de produtos -->
   <section id="product-container" class="flex-container">
     <!-- Os produtos vão ser adicionados aqui dinamicamente pelo JavaScript -->

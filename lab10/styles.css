@@ -35,6 +35,43 @@ header {
   nav ul li a:hover {
     text-decoration: underline;
   }
+
+  /* Seção de Filtros */
+#filter-section {
+  background-color: #ff66b2; /* Rosa mais escuro */
+  padding: 20px;
+  margin-top: 60px; /* Para dar espaço ao cabeçalho fixo */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#filter-section label {
+  margin-right: 10px;
+}
+
+#filter-section select,
+#filter-section input {
+  padding: 8px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Ajuste de espaçamento entre os filtros */
+#filter-section label,
+#filter-section select,
+#filter-section input {
+  margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+/* Para garantir que o conteúdo dentro da seção se alinhe bem */
+#filter-section > * {
+  margin-left: 10px;
+}
+
+
   
   /* Flex Container para Produtos e Cesto */
   .flex-container {

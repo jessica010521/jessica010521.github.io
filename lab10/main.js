@@ -1,22 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   let cart = []; // Inicializar o cesto
+  let products = []; // Para armazenar os produtos carregados
+  let categories = []; // Para armazenar as categorias carregadas
 
-  // Função para verificar se um produto está no cesto
-  function isInCart(product) {
-    return cart.some(item => item.id === product.id); // Verificar por ID
-  }
-
-  // Exibir os produtos carregados da API
-  function displayProducts(products) {
+  // Função para carregar e exibir os produtos
+  function displayProducts(filteredProducts) {
     const productContainer = document.getElementById("product-container");
     productContainer.innerHTML = ""; // Limpar produtos anteriores
 
-    products.forEach(product => {
+    if (filteredProducts.length === 0) {
+      productContainer.innerHTML = "<p>Não há produtos disponíveis.</p>";
+    }
+
+    filteredProducts.forEach(product => {
       const productCard = document.createElement("article");
       productCard.className = "product-card";
       productCard.innerHTML = `
-        <h3>${product.title}</h3>
-        <img src="${product.image}" alt="Imagem de ${product.title}">
+        <h3>${product.name}</h3>
+        <img src="${product.image}" alt="Imagem de ${product.name}">
         <p><strong>Preço:</strong> $${product.price.toFixed(2)}</p>
         <p>${product.description}</p>
         <button class="cart-button">${isInCart(product) ? "Remover do Cesto" : "Adicionar ao Cesto"}</button>
@@ -26,63 +27,80 @@ document.addEventListener("DOMContentLoaded", function () {
       const cartButton = productCard.querySelector(".cart-button");
       cartButton.addEventListener("click", function () {
         if (isInCart(product)) {
-          // Remover do cesto
           cart = cart.filter(item => item.id !== product.id);
           cartButton.textContent = "Adicionar ao Cesto";
         } else {
-          // Adicionar ao cesto
           cart.push(product);
           cartButton.textContent = "Remover do Cesto";
         }
         displayCart(); // Atualizar o cesto
       });
 
-      productContainer.appendChild(productCard);
+      productContainer.appendChild(productCard); // Adiciona ao container
     });
   }
 
-  function displayCart() {
-    const cartContainer = document.getElementById("cart-container");
-    cartContainer.innerHTML = ""; // Limpar o cesto
-  
-    if (cart.length === 0) {
-      cartContainer.innerHTML = "<p>O cesto está vazio.</p>";
-    } else {
-      cart.forEach(product => {
-        const cartItem = document.createElement("article");
-        cartItem.className = "product-card"; // Reutilizamos o estilo dos produtos
-        cartItem.innerHTML = `
-          <h3>${product.title}</h3>
-          <img src="${product.image}" alt="Imagem de ${product.title}">
-          <p><strong>Preço:</strong> $${product.price.toFixed(2)}</p>
-          <p>${product.description}</p>
-          <button class="remove-button">Remover do Cesto</button>
-        `;
-  
-        // Botão para remover do cesto
-        const removeButton = cartItem.querySelector(".remove-button");
-        removeButton.addEventListener("click", function () {
-          cart = cart.filter(item => item.id !== product.id); // Remove do cesto
-          displayProducts(products); // Atualiza os produtos
-          displayCart(); // Atualiza o cesto
-        });
-  
-        cartContainer.appendChild(cartItem); // Adiciona ao container
-      });
-  
-      // Calcular o total
-      const total = cart.reduce((sum, product) => sum + product.price, 0).toFixed(2);
-  
-      // Adicionar o total abaixo do cesto
-      const totalDiv = document.createElement("div");
-      totalDiv.className = "cart-total";
-      totalDiv.innerHTML = `<h3>Total: $${total}</h3>`;
-      cartContainer.appendChild(totalDiv);
-    }
+  // Função para verificar se um produto está no cesto
+  function isInCart(product) {
+    return cart.some(item => item.id === product.id); // Verificar por ID
   }
+
+  // Função para filtrar produtos
+  function filterProducts() {
+    let filteredProducts = products;
+
+    // Filtrar por categoria
+    const category = document.getElementById("category-filter").value;
+    if (category) {
+      filteredProducts = filteredProducts.filter(product => product.category === category);
+    }
+
+    // Filtrar por preço
+    const priceOrder = document.getElementById("price-filter").value;
+    if (priceOrder === "asc") {
+      filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (priceOrder === "desc") {
+      filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
+    }
+
+    // Filtrar por nome
+    const searchQuery = document.getElementById("search-input").value.toLowerCase();
+    if (searchQuery) {
+      filteredProducts = filteredProducts.filter(product =>
+        product.name.toLowerCase().includes(searchQuery)
+      );
+    }
+
+    displayProducts(filteredProducts); // Exibir produtos filtrados
+  }
+
+  // Carregar categorias da API
+  fetch('https://deisishop.pythonanywhere.com/categories/')
+    .then(response => response.json())
+    .then(data => {
+      categories = data;
+      // Preencher o filtro de categorias
+      const categoryFilter = document.getElementById("category-filter");
+      categories.forEach(category => {
+        const option = document.createElement("option");
+        option.value = category.name.toLowerCase(); // Usando o nome da categoria em minúsculo para comparação
+        option.textContent = category.name;
+        categoryFilter.appendChild(option);
+      });
+    })
+    .catch(error => console.log('Erro ao carregar categorias:', error));
+
   // Carregar produtos da API
   fetch('https://deisishop.pythonanywhere.com/products/')
- .then(response=>response.json())
- .then(data=>displayProducts(data))
- .catch(error=>('Erro:',error));
+    .then(response => response.json())
+    .then(data => {
+      products = data;
+      displayProducts(products); // Exibir os produtos carregados
+    })
+    .catch(error => console.log('Erro ao carregar produtos:', error));
+
+  // Adicionar event listeners para os filtros
+  document.getElementById("category-filter").addEventListener("change", filterProducts);
+  document.getElementById("price-filter").addEventListener("change", filterProducts);
+  document.getElementById("search-input").addEventListener("input", filterProducts);
 });
