@@ -7,9 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function displayProducts(filteredProducts) {
     const productContainer = document.getElementById("product-container");
     productContainer.innerHTML = ""; // Limpar produtos anteriores
-    const cartContainer = document.getElementById("cart-container");
-
-
     if (filteredProducts.length === 0) {
       productContainer.innerHTML = "<p>Não há produtos disponíveis.</p>";
     }
@@ -25,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <button class="cart-button">${isInCart(product) ? "Remover do Cesto" : "Adicionar ao Cesto"}</button>
         <button class="cartAll-button">${isInCart(product) ? "Remover tudo do Cesto" : "Adicionar tudo ao Cesto"}</button>
       `;
-      
+
       // Evento do botão para adicionar/remover do cesto
       const cartButton = productCard.querySelector(".cart-button");
       cartButton.addEventListener("click", function () {
