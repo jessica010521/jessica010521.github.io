@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function displayProducts(filteredProducts) {
     const productContainer = document.getElementById("product-container");
     productContainer.innerHTML = ""; // Limpar produtos anteriores
+    const cartContainer = document.getElementById("cart-container");
+
 
     if (filteredProducts.length === 0) {
       productContainer.innerHTML = "<p>Não há produtos disponíveis.</p>";
@@ -21,8 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Preço:</strong> $${product.price.toFixed(2)}</p>
         <p>${product.description}</p>
         <button class="cart-button">${isInCart(product) ? "Remover do Cesto" : "Adicionar ao Cesto"}</button>
-
+        <button class="cartAll-button">${isInCart(product) ? "Remover tudo do Cesto" : "Adicionar tudo ao Cesto"}</button>
       `;
+
+      filteredProducts.forEach(product => {
+        const cartCard = document.createElement("article");
+        productCard.className = "product-card";
+        productCard.innerHTML = `
+          <h3>${product.name}</h3>
+          <img src="${product.image}" alt="Imagem de ${product.name}">
+          <p><strong>Preço:</strong> $${product.price.toFixed(2)}</p>
+          <p>${product.description}</p>
+          <button class="cart-button">${isInCart(product) ? "Remover do Cesto" : "Adicionar ao Cesto"}</button>
+          <button class="cartAll-button">${isInCart(product) ? "Remover tudo do Cesto" : "Adicionar tudo ao Cesto"}</button>
+        `;
+
+      
 
       // Evento do botão para adicionar/remover do cesto
       const cartButton = productCard.querySelector(".cart-button");
@@ -37,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         displayCart(); // Atualizar o cesto
       });
 
+      
       productContainer.appendChild(productCard); // Adiciona ao container
     });
   }
@@ -64,11 +81,19 @@ document.addEventListener("DOMContentLoaded", function () {
       filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
     }
 
+    const rateOrder = document.getElementById("rate-filter").value;
+    if (rateOrder === "asc") {
+      filteredProducts = filteredProducts.sort((a, b) => a.rate - b.rate);
+    } else if (priceOrder === "desc") {
+      filteredProducts = filteredProducts.sort((a, b) => b.rate - a.rate);
+    }
+
     // Filtrar por nome
     const searchQuery = document.getElementById("search-input").value.toLowerCase();
     if (searchQuery) {
       filteredProducts = filteredProducts.filter(product =>
-        product.name.toLowerCase().includes(searchQuery)
+        product.name.toLowerCase().includes(searchQuery),
+        product.description.includes(searchQuery)
       );
     }
 
