@@ -25,21 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <button class="cart-button">${isInCart(product) ? "Remover do Cesto" : "Adicionar ao Cesto"}</button>
         <button class="cartAll-button">${isInCart(product) ? "Remover tudo do Cesto" : "Adicionar tudo ao Cesto"}</button>
       `;
-
-      filteredProducts.forEach(product => {
-        const cartCard = document.createElement("article");
-        productCard.className = "product-card";
-        productCard.innerHTML = `
-          <h3>${product.name}</h3>
-          <img src="${product.image}" alt="Imagem de ${product.name}">
-          <p><strong>Preço:</strong> $${product.price.toFixed(2)}</p>
-          <p>${product.description}</p>
-          <button class="cart-button">${isInCart(product) ? "Remover do Cesto" : "Adicionar ao Cesto"}</button>
-          <button class="cartAll-button">${isInCart(product) ? "Remover tudo do Cesto" : "Adicionar tudo ao Cesto"}</button>
-        `;
-
       
-
       // Evento do botão para adicionar/remover do cesto
       const cartButton = productCard.querySelector(".cart-button");
       cartButton.addEventListener("click", function () {
