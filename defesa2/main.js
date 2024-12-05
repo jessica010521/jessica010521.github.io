@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Preço:</strong> $${product.price.toFixed(2)}</p>
         <p>${product.description}</p>
         <button class="cart-button">${isInCart(product) ? "Remover do Cesto" : "Adicionar ao Cesto"}</button>
+
       `;
 
       // Evento do botão para adicionar/remover do cesto
