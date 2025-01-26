@@ -51,6 +51,7 @@ nav {
   grid-area: nav;
   display: flex; /* Organiza os links numa linha */
   justify-content: center; /* Centraliza os links */
+  flex-wrap: wrap; /* Ajusta os itens em ecrãs pequenos */
   gap: 15px; /* Espaçamento entre os links */
   padding: 10px 0; /* Espaçamento no menu */
   background-color: #e3e6d7; /* Fundo claro */
@@ -76,19 +77,6 @@ nav a:hover {
 
 nav a:visited {
   color: #4b6f3e; /* Cor para links visitados */
-}
-
-/* Efeitos before/after no hover */
-nav a:hover::before {
-  content: "[";
-  color: #91b86d;
-  margin-right: 5px;
-}
-
-nav a:hover::after {
-  content: "]";
-  color: #91b86d;
-  margin-left: 5px;
 }
 
 /* Conteúdo Principal */
