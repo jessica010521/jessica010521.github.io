@@ -6,6 +6,41 @@
   font-family: 'Cormorant Garamond', serif; /* Fonte global */
 }
 
+
+/* Estilos para tabelas */
+table {
+  width: 100%; /* Faz a tabela ocupar toda a largura disponível */
+  border-collapse: collapse; /* Remove espaços entre as bordas */
+  margin-top: 20px; /* Espaçamento superior */
+  background-color: #fff; /* Fundo branco */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+}
+
+th, td {
+  padding: 10px; /* Espaçamento interno */
+  text-align: left; /* Alinha o texto à esquerda */
+  border: 1px solid #ccc; /* Borda leve e uniforme */
+}
+
+th {
+  background-color: #e3e6d7; /* Fundo do cabeçalho */
+  color: #3b5323; /* Cor do texto do cabeçalho */
+  font-weight: bold;
+}
+
+td {
+  color: #333; /* Cor do texto */
+}
+
+table a {
+  color: #61992d; /* Cor dos links dentro da tabela */
+  text-decoration: none; /* Remove sublinhado */
+}
+
+table a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
 /* Corpo geral */
 body {
   display: grid;
