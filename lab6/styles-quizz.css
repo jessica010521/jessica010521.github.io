@@ -1,0 +1,166 @@
+/* Reset simples */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  /* Cabeçalho e rodapé */
+  header, footer {
+    background-color: #61992d;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Estilizar o menu de navegação */
+nav {
+  display: flex; /* Torna os links uma flexbox */
+  justify-content: center; /* Centraliza os links */
+  align-items: center; /* Alinha os links verticalmente */
+  gap: 15px; /* Espaçamento entre os links */
+  padding: 10px 0; /* Espaçamento superior e inferior */
+  background-color: #e3e6d7; /* Fundo do menu */
+  border-bottom: 2px solid #61992d; /* Linha inferior */
+}
+
+/* Estilizar os links no menu */
+nav a {
+  text-decoration: none; /* Remove sublinhado */
+  color: #3b5323; /* Verde escuro */
+  font-weight: bold; /* Texto em negrito */
+  padding: 5px 10px; /* Espaçamento interno dos links */
+  border-radius: 5px; /* Cantos arredondados */
+  transition: background-color 0.3s, color 0.3s; /* Efeito hover suave */
+}
+
+/* Efeito hover nos links */
+nav a:hover {
+  background-color: #91b86d; /* Fundo verde claro */
+  color: white; /* Texto branco */
+}
+
+  /* Container principal */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Fieldsets */
+  fieldset {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+  }
+  
+  legend {
+    font-weight: bold;
+    color: #61992d;
+  }
+  
+  /* Labels */
+  label {
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+ /* Inputs e textarea */
+ input[type="text"],
+ input[type="email"],
+ input[type="date"],
+ input[type="time"],
+ input[type="color"],
+ input[type="number"],
+ input[type="range"],
+ textarea,
+ input[list],
+ select {
+   display: block; /* Faz os inputs ocuparem uma linha */
+   margin: 5px 0 15px 0;
+   padding: 5px;
+   font-size: 1rem;
+   width: 100%; /* Para inputs terem largura consistente */
+   max-width: 400px; /* Limita largura máxima */
+ }
+ 
+ textarea {
+   resize: vertical; /* Permite redimensionar na vertical */
+ }
+ 
+ /* Radio e checkbox */
+ input[type="radio"],
+ input[type="checkbox"] {
+   display: inline-block; /* Mantém inline com os labels */
+   margin-top: 10px;
+   margin-right: 5px;
+ }
+
+ label[for="rio-lima"],
+ label[for="rio-vizela"],
+ label[for="vinho"],
+ label[for="frutas"],
+ label[for="basico"],
+ label[for="premium"] {
+   display: inline; /* Mantém inline para opções do tipo radio/checkbox */
+   margin-right: 10px; /* Espaçamento entre opções */
+ }
+  
+  /* Botões */
+  input[type="submit"],
+  input[type="reset"] {
+    padding: 8px 16px;
+    margin: 10px 5px 0 0;
+    background-color: #61992d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: #507e24; /* Cor mais escura para hover */
+  }
+  
+  /* Input de imagem como "botão" */
+  input[type="image"] {
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  /* Pequena media query para telas menores */
+  @media (max-width: 600px) {
+    label {
+      display: block;
+      width: auto;
+      margin-bottom: 5px;
+    }
+  }
+  

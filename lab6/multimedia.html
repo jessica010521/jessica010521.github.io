@@ -1,35 +1,81 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="styles.css">
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ponte de Lima</title>
-    </head>
-    <body>
-        <header>
-            <h1>Querida Ponte de Lima</h1>
-        </header>
-        <main>
-            <h2>Multimédia</h2>
-            <h3>Fotografias</h3>
-                <nav>
-                    <a href="index.html">Home</a>
-                    <a href="local.html">Localização</a>
-                    <a href="multimedia.html">Multimédia</a>
-                    <a href="info.html">Informação</a>
-                </nav>
+<head>
+    <meta charset="UTF-8">
+    <title>Ponte de Lima Multimédia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Querida Ponte de Lima</h1>
+    </header>
 
-                <img src="images/PL.jpeg" alt="Vista de Ponte de Lima">
-                <p>
-                    <a href="images/PL1_grande.jpeg" target="_blank"><img src="images/PL1_pequeno.jpeg"></a>
-                    <a href="images/PL2_grande.jpeg" target="_blank"><img src="images/PL2_pequeno.jpeg"></a>
-                    <a href="images/PL3_grande.jpeg" target="_blank"><img src="images/PL3_pequeno.jpeg"></a>
+    <main>
+        <h2>Multimédia</h2>
 
-                </p>
-            </main>
+        <!-- Links Âncora para cada seção de h3 -->
+        <nav class="ancoras">
+          <a href="#fotografias">Fotografias</a> | 
+          <a href="#video">Vídeo</a> | 
+          <a href="#poema">Poema</a>
+        </nav>
 
-        <footer>
-            <p>DIW 2024</p>
-        </footer>
-    </body>
+        <!-- Menu principal -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a> 
+            <a href="pontosinteresse.html">Pontos de Interesse</a> 
+            <a href="capitais.html">Capital</a> 
+
+        </nav>
+        <!-- Fotografia -->
+        <h3 id="fotografias">Fotografias</h3>
+        <img src="images/PL.jpeg" alt="Vista de Ponte de Lima" class="banner">
+        <p class="galeria">
+            <a href="images/PL1_grande.jpeg" target="_blank">
+                <img src="images/PL1_pequeno.jpeg" alt="Foto 1">
+            </a>
+            <a href="images/PL2_grande.jpeg" target="_blank">
+                <img src="images/PL2_pequeno.jpeg" alt="Foto 2">
+            </a>
+            <a href="images/PL3_grande.jpeg" target="_blank">
+                <img src="images/PL3_pequeno.jpeg" alt="Foto 3">
+            </a>
+        </p>
+
+        <!-- Vídeo -->
+        <h3 id="video">Vídeo</h3>
+        <p>
+            <iframe width="560" height="315" 
+                src="https://www.youtube.com/watch?v=aNCwgAcRYi4&list=PLj-szXPZWe7YMb8FSWQViL0FdO--cdIBo&index=3" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </p>
+
+        <!-- Poema -->
+        <h3 id="poema">Poema</h3>
+        <p class="poema">
+            Ponte de Lima, serena e gentil,  
+            Guardas histórias nas pedras do teu chão,  
+            Onde o rio corre suave e subtil,  
+            E a vida encontra um doce coração. 
+
+            Teus campos verdes emolduram memórias,  
+            Das gentes que passam e deixam saudade,  
+            Em teu abraço, encontro muitas glórias,  
+            E na tua paz, a eterna felicidade.
+        </p>
+    </main>
+
+    <footer>
+        <p>DIW 2024</p>
+    </footer>
+</body>
 </html>
