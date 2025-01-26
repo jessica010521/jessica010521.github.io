@@ -1,175 +1,185 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.5;
-  }
-  
-  /* Cabeçalho e rodapé */
-  header,
-  footer {
-    background-color: #61992d; 
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 10px;
-  }
-  
-  h1 {
-    margin: 0;
-    font-size: 2rem;
-  }
-  
-  footer p {
-    margin: 0;
-  }
-  
-  /* Container principal */
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Títulos */
-  h2 {
-    margin-bottom: 5px;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  h3 {
-    margin: 10px 0;
-    font-weight: 600;
-  }
-  
-  /* Nav */
- /* Navegação básica */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cormorant Garamond', serif; /* Fonte global */
+}
+
+/* Corpo geral */
+body {
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "aside-left"
+    "aside-right"
+    "footer";
+  grid-template-rows: auto auto 1fr auto auto auto;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f7f7f7;
+}
+
+/* Cabeçalho e Rodapé */
+header {
+  grid-area: header;
+  background-color: #61992d; 
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #61992d;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+header h1,
+footer p {
+  margin: 0;
+}
+
+/* Navegação */
 nav {
+  grid-area: nav;
   display: flex; /* Organiza os links numa linha */
   justify-content: center; /* Centraliza os links */
-  gap: 20px; /* Espaçamento entre os links */
+  gap: 15px; /* Espaçamento entre os links */
   padding: 10px 0; /* Espaçamento no menu */
   background-color: #e3e6d7; /* Fundo claro */
   border-bottom: 2px solid #61992d; /* Linha inferior */
 }
 
-/* Links no menu */
 nav a {
   text-decoration: none; /* Remove sublinhado */
   color: #3b5323; /* Verde escuro */
   font-weight: bold;
-  font-size: 1rem;
   padding: 5px 10px; /* Espaçamento interno */
-  transition: color 0.3s, background-color 0.3s; /* Transições suaves */
   display: flex;
   align-items: center; /* Alinha texto e ícones */
   gap: 5px; /* Espaço entre o ícone e o texto */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Pseudo-classes para links */
-nav a:link {
-  color: #3b5323; /* Cor inicial */
+nav a:hover {
+  background-color: #91b86d;
+  color: white;
+  border-radius: 5px;
 }
 
 nav a:visited {
   color: #4b6f3e; /* Cor para links visitados */
 }
 
-nav a:hover {
-  color: white; /* Cor do texto no hover */
-  background-color: #91b86d; /* Fundo verde claro no hover */
-  border-radius: 5px; /* Cantos arredondados no hover */
-}
-
-nav a:active {
-  color: white; /* Cor do texto quando clicado */
-  background-color: #61992d; /* Fundo verde tropa ao clicar */
-}
-
 /* Efeitos before/after no hover */
 nav a:hover::before {
   content: "[";
-  color: #91b86d; /* Verde claro */
-  margin-right: 5px; /* Espaço antes do texto */
+  color: #91b86d;
+  margin-right: 5px;
 }
 
 nav a:hover::after {
   content: "]";
-  color: #91b86d; /* Verde claro */
-  margin-left: 5px; /* Espaço depois do texto */
+  color: #91b86d;
+  margin-left: 5px;
 }
 
-  
-  /* Banner principal */
-  .banner {
-    display: block;
-    margin: 0 auto 20px;
-    max-width: 100%;
-    border-radius: 4px;
-  }
-  
-  /* Galeria de imagens */
-  .galeria {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .galeria a {
-    display: inline-block;
-    margin: 0 5px;
-    transition: transform 0.2s;
-  }
-  
-  .galeria a:hover {
-    transform: scale(1.05);
-  }
-  
-  .galeria img {
-    max-width: 180px;
-    border-radius: 4px;
-  }
-  
-  .poema {
-    white-space: pre-line;
-    text-align: left; /* ou justify */
-    font-style: italic;
-    line-height: 1.6;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
-  
-  table, th, td {
-    border: 1px solid #333;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  /* Ajuste dos parágrafos, caso precises */
-  p {
-    margin-bottom: 16px;
-    text-align: justify;
-  }
-
-  /* Cursor zoom-in para links de imagens */
-.galeria a {
-  cursor: zoom-in;
+/* Conteúdo Principal */
+main {
+  grid-area: main;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Aplica a fonte "Cormorant Garamond" ao site */
-* {
-  font-family: 'Cormorant Garamond', serif;
+.content h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-  
+.content img {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.content p {
+  text-align: justify;
+}
+
+/* Asides */
+.aside-left,
+.aside-right {
+  padding: 20px;
+  background-color: #d4e1c7;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.aside-left {
+  grid-area: aside-left;
+}
+
+.aside-right {
+  grid-area: aside-right;
+}
+
+.aside-left p,
+.aside-right p {
+  text-align: justify;
+}
+
+/* Media Queries */
+/* Layout de 1 coluna para mobile */
+@media (max-width: 767px) {
+  body {
+    grid-template-areas: 
+      "header"
+      "nav"
+      "main"
+      "footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
+  }
+
+  .aside-left,
+  .aside-right {
+    display: none; /* Esconde laterais no mobile */
+  }
+}
+
+/* Layout de 2 colunas para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    grid-template-areas: 
+      "header header"
+      "nav nav"
+      "aside-left main"
+      "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+}
+
+/* Layout de 3 colunas para desktops */
+@media (min-width: 1024px) {
+  body {
+    grid-template-areas: 
+      "header header header"
+      "nav nav nav"
+      "aside-left main aside-right"
+      "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+}
