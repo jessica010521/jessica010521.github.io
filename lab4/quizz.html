@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Quão bem conheces Ponte de Lima?</title>
-  <!-- Liga ao ficheiro CSS externo -->
   <link rel="stylesheet" href="styles-quizz.css">
 </head>
 <body>
@@ -13,15 +12,13 @@
 
   <main>
     <h2>Quizz</h2>
-    
-    <!-- Formulário com método GET e ação para postman-echo -->
+
     <form id="quizForm" method="get" action="https://postman-echo.com/get">
       
-      <!-- Área para dados pessoais -->
+      <!-- Dados pessoais -->
       <fieldset>
         <legend>Informações Pessoais</legend>
         
-        <!-- Nome com vários atributos -->
         <label for="nome">Nome:</label>
         <input 
           type="text" 
@@ -34,9 +31,7 @@
           maxlength="30"
           autocomplete="given-name"
         >
-        <br>
 
-        <!-- Apelido -->
         <label for="apelido">Apelido:</label>
         <input 
           type="text" 
@@ -47,9 +42,7 @@
           maxlength="40"
           autocomplete="family-name"
         >
-        <br>
 
-        <!-- Email -->
         <label for="email">Email:</label>
         <input 
           type="email" 
@@ -60,44 +53,31 @@
         >
       </fieldset>
 
-      <!-- Área do quizz em si -->
+      <!-- Quizz -->
       <fieldset>
         <legend>Quizz sobre Ponte de Lima</legend>
         
-        <!-- Radio -->
         <p>Qual é o rio que atravessa Ponte de Lima?</p>
         <input type="radio" id="rio-lima" name="rio" value="Rio Lima" required>
         <label for="rio-lima">Rio Lima</label>
-        
         <input type="radio" id="rio-vizela" name="rio" value="Rio Vizela">
         <label for="rio-vizela">Rio Vizela</label>
-        <br>
 
-        <!-- Checkbox -->
         <p>Qual é o principal produto agrícola de Ponte de Lima?</p>
         <input type="checkbox" id="vinho" name="produtoAgricola" value="Vinho" required>
         <label for="vinho">Vinho</label>
-        
         <input type="checkbox" id="frutas" name="produtoAgricola" value="Frutas">
         <label for="frutas">Frutas</label>
-        <br>
 
-        <!-- Data -->
         <p>Em que ano foi fundada a cidade?</p>
         <input type="date" id="fundacao" name="fundacao" required>
-        <br>
 
-        <!-- Hora -->
         <p>Horário do Mercado Municipal?</p>
         <input type="time" id="horario-mercado" name="horario-mercado" required>
-        <br>
 
-        <!-- Cor -->
         <p>Qual a cor oficial da cidade?</p>
         <input type="color" id="cor-oficial" name="cor-oficial" required>
-        <br>
 
-        <!-- Número (mínimo, máximo, passo) -->
         <p>Quantos distritos tem a cidade?</p>
         <input 
           type="number" 
@@ -109,9 +89,7 @@
           max="10" 
           step="1"
         >
-        <br>
 
-        <!-- Range -->
         <p>Avaliação de qualidade de vida (1 a 5)?</p>
         <input 
           type="range" 
@@ -123,9 +101,7 @@
           step="1" 
           value="3"
         >
-        <br>
 
-        <!-- "Botão" de imagem -->
         <p>Envie uma foto do seu local favorito:</p>
         <input 
           type="image" 
@@ -135,9 +111,7 @@
           alt="Carregar foto" 
           style="max-width: 80px;"
         >
-        <br>
 
-        <!-- Textarea -->
         <p>Fala um pouco da tua experiência:</p>
         <textarea 
           id="experiencia" 
@@ -147,9 +121,7 @@
           rows="4" 
           cols="50"
         ></textarea>
-        <br>
 
-        <!-- Datalist -->
         <p>Atividade favorita na região:</p>
         <input 
           list="atividades" 
@@ -163,9 +135,7 @@
           <option value="Visita ao Museu">
           <option value="Degustação de vinhos">
         </datalist>
-        <br>
 
-        <!-- Botões -->
         <input type="reset" value="Reset">
         <input type="submit" value="Send">
       </fieldset>

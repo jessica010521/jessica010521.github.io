@@ -63,28 +63,46 @@
     font-weight: bold;
   }
   
-  /* Inputs e textarea */
-  input[type="text"],
-  input[type="email"],
-  input[type="date"],
-  input[type="time"],
-  input[type="color"],
-  input[type="number"],
-  input[type="range"],
-  textarea,
-  input[list],
-  select {
-    margin: 5px 0 15px 0;
-    padding: 5px;
-    font-size: 1rem;
-  }
-  
-  /* Ajuste para radio e checkbox */
-  input[type="radio"],
-  input[type="checkbox"] {
-    margin-top: 10px;
-    margin-right: 5px;
-  }
+ /* Inputs e textarea */
+ input[type="text"],
+ input[type="email"],
+ input[type="date"],
+ input[type="time"],
+ input[type="color"],
+ input[type="number"],
+ input[type="range"],
+ textarea,
+ input[list],
+ select {
+   display: block; /* Faz os inputs ocuparem uma linha */
+   margin: 5px 0 15px 0;
+   padding: 5px;
+   font-size: 1rem;
+   width: 100%; /* Para inputs terem largura consistente */
+   max-width: 400px; /* Limita largura máxima */
+ }
+ 
+ textarea {
+   resize: vertical; /* Permite redimensionar na vertical */
+ }
+ 
+ /* Radio e checkbox */
+ input[type="radio"],
+ input[type="checkbox"] {
+   display: inline-block; /* Mantém inline com os labels */
+   margin-top: 10px;
+   margin-right: 5px;
+ }
+
+ label[for="rio-lima"],
+ label[for="rio-vizela"],
+ label[for="vinho"],
+ label[for="frutas"],
+ label[for="basico"],
+ label[for="premium"] {
+   display: inline; /* Mantém inline para opções do tipo radio/checkbox */
+   margin-right: 10px; /* Espaçamento entre opções */
+ }
   
   /* Botões */
   input[type="submit"],
@@ -100,13 +118,14 @@
   
   input[type="submit"]:hover,
   input[type="reset"]:hover {
-    background-color: #61992d;
+    background-color: #507e24; /* Cor mais escura para hover */
   }
   
   /* Input de imagem como "botão" */
   input[type="image"] {
     cursor: pointer;
     margin-top: 10px;
+    display: block;
   }
   
   /* Pequena media query para telas menores */
