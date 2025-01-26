@@ -134,8 +134,51 @@ nav a:last-child:hover {
 }
 
 /* Cidades */
+/* Secção Cidades */
 #cidades {
-  padding: 50px 20px;
-  background-color: #91b86d;
-  color: #333;
+  display: flex; /* Ativa flexbox */
+  flex-wrap: wrap; /* Permite que os elementos "quebrem" linha se necessário */
+  justify-content: space-between; /* Espaço uniforme entre os itens */
+  align-items: center; /* Alinha os itens verticalmente */
+  gap: 20px; /* Espaço entre os itens */
+  padding: 20px;
+  background-color: #f0f3ec; /* Fundo claro */
 }
+
+/* Estilização dos elementos da cidade */
+#cidades section {
+  display: flex;
+  flex-direction: column; /* Empilha imagem e texto verticalmente */
+  align-items: center; /* Centraliza o texto e imagem */
+  margin: 10px;
+  width: 120px; /* Largura consistente */
+  text-align: center;
+  background-color: #fff; /* Fundo do bloco */
+  border-radius: 15px; /* Cantos arredondados */
+  overflow: hidden; /* Evita elementos fora dos limites */
+  transition: background-color 0.3s; /* Efeito de hover suave */
+}
+
+/* Efeito de hover na secção */
+#cidades section:hover {
+  background-color: #e3e6d7; /* Fundo mais escuro ao passar por cima */
+}
+
+/* Estilização da imagem */
+#cidades section img {
+  width: 100%; /* Imagem ocupa toda a largura */
+  border-top-left-radius: 15px; /* Canto arredondado superior esquerdo */
+  border-top-right-radius: 15px; /* Canto arredondado superior direito */
+}
+
+/* Estilização do texto */
+#cidades section div {
+  width: 100%; /* Largura do bloco */
+  padding: 10px 0;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  border-bottom-left-radius: 15px; /* Canto arredondado inferior esquerdo */
+  border-bottom-right-radius: 15px; /* Canto arredondado inferior direito */
+}
+
