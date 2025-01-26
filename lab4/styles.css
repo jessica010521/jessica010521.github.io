@@ -1,52 +1,126 @@
-body {
-    font-family: cursive, sans-serif;
-    background-color: #f4f4f4;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   
-  header {
-    background-color: #22c1dd;
-    color: white;
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  /* Cabeçalho e rodapé */
+  header,
+  footer {
+    background-color: #61992d; 
+    color: #fff;
     text-align: center;
     padding: 20px;
+    margin-bottom: 10px;
   }
   
-  nav {
-    background-color: #300feb;
-    padding: 10px;
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Container principal */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Títulos */
+  h2 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
     text-align: center;
+  }
+  
+  h3 {
+    margin: 10px 0;
+    font-weight: 600;
+  }
+  
+  /* Nav */
+  nav {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #eaeaea;
+    padding: 10px 0;
   }
   
   nav a {
-    color: white;
-    margin: 0 15px;
     text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.2s;
   }
   
   nav a:hover {
-    background-color: #82e5e9;
-    color: black;
-    padding: 5px;
+    color: #56a133;
   }
   
-  section img {
+  /* Banner principal */
+  .banner {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  /* Galeria de imagens */
+  .galeria {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .galeria a {
+    display: inline-block;
+    margin: 0 5px;
+    transition: transform 0.2s;
+  }
+  
+  .galeria a:hover {
+    transform: scale(1.05);
+  }
+  
+  .galeria img {
+    max-width: 180px;
+    border-radius: 4px;
+  }
+  
+  .poema {
+    white-space: pre-line;
+    text-align: left; /* ou justify */
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  table {
     width: 100%;
-    height: auto;
+    border-collapse: collapse;
     margin: 20px 0;
   }
   
-  main {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
+  table, th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
   }
   
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+  /* Ajuste dos parágrafos, caso precises */
+  p {
+    margin-bottom: 16px;
+    text-align: justify;
   }
+  

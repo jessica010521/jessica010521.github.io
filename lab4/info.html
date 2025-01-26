@@ -1,71 +1,85 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="styles.css">
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ponte de Lima</title>
-    </head>
-    <body>
-        <header>
-            <h1>Querida Ponte de Lima</h1>
-        </header>
-        <main>
-            <h2>Ponte de Lima encanta o olhar de qualquer um!!!</h2>
-                <nav>
-                    <a href="index.html">Home</a>
-                    <a href="local.html">Localização</a>
-                    <a href="multimedia.html">Multimédia</a>
-                    <a href="info.html">Informação</a>
-                </nav>
+<head>
+    <meta charset="UTF-8">
+    <title>Ponte de Lima Informações</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <header>
+        <h1>Querida Ponte de Lima</h1>
+    </header>
 
-                <img src="images/PL.jpeg" alt="Vista de Ponte de Lima">
+    <main>
+        <!-- Título principal da secção -->
+        <h2>Informações</h2>
 
-                <p>
-                    Ponte de Lima é uma vila encantadora no norte de Portugal, 
-                    localizada na região do Minho. Conhecida pelo seu patrimônio 
-                    histórico e paisagens deslumbrantes, é um exemplo de harmonia 
-                    entre tradição e modernidade.
-                </p>
+        <!-- Pequeno texto introdutório -->
+        <p>Aqui encontras alguns dados e curiosidades sobre Ponte de Lima.</p>
 
-                <table>
-                    <tr>
-                        <th colspan="2">Demografia</th>
-                    </tr>
-                    <tr>
-                        <td>População</td>
-                        <td>43.000 hab</td>
-                    </tr>
-                    <tr>
-                        <td>Densidade populacional</td>
-                        <td>134 hab/km²</td>
-                    </tr>
-                    <tr>
-                        <th colspan="2">Geografia</th>
-                    </tr>
-                    <tr>
-                        <td>Área</td>
-                        <td>320 km²</td>
-                    </tr>
-                    <tr>
-                        <td>Região</td>
-                        <td>sub-região do Minho_Lima</td>
-                    </tr>
-                    <tr>
-                        <td>País</td>
-                        <td>Portugal</td>
-                    </tr>
-                    <tr>
-                        <th colspan="2">Website</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><a href="https://www.cm-pontedelima.pt/">www.cm-pontedelima.pt/</a></td>
-                    </tr>
-                </table>
+        <!-- Menu de navegação principal -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+        </nav>
 
-            </main>
+        <img src="images/PL.jpeg" alt="Vista de Ponte de Lima" class="banner">
 
-        <footer>
-            <p>DIW 2024</p>
-        </footer>
-    </body>
+        <!-- Tabela com 3 colunas e 4 linhas, usando colspan e rowspan -->
+        <table>
+            <!-- Primeira linha: "Demografia" com rowSpan=2 -->
+            <tr>
+                <th rowspan="2">Demografia</th>
+                <th>População</th>
+                <td>43.000 hab</td>
+            </tr>
+            <tr>
+                <th>Densidade populacional</th>
+                <td>134 hab/km²</td>
+            </tr>
+        
+            <!-- Segunda parte: "Geografia" com rowSpan=3 -->
+            <tr>
+                <th rowspan="3">Geografia</th>
+                <th>Área</th>
+                <td>320 km²</td>
+            </tr>
+            <tr>
+                <th>Região</th>
+                <td>Minho_Lima</td>
+            </tr>
+            <tr>
+                <th>País</th>
+                <td>Portugal</td>
+            </tr>
+        
+            <!-- Última linha: "Website" ocupa a primeira coluna e a 2ª e 3ª colunas são unidas -->
+            <tr>
+                <th>Website</th>
+                <td colspan="2">
+                    <a href="https://www.cm-pontedelima.pt/" target="_blank">
+                        www.cm-pontedelima.pt
+                    </a>
+                </td>
+            </tr>
+        </table>
+        
+
+        <!-- Lista de curiosidades -->
+        <h3>Curiosidades</h3>
+        <ul>
+            <li>É considerada a vila mais antiga de Portugal, com foral atribuído em 1125.</li>
+            <li>O Rio Lima era antigamente chamado de “Rio do Esquecimento” pelos romanos.</li>
+            <li>A ponte medieval/romana que atravessa o rio tem 24 arcos, alguns originais do século I.</li>
+            <li>Realiza anualmente as “Feiras Novas”, festa popular desde o século XIX.</li>
+            <li>A gastronomia local destaca o arroz de sarrabulho e a lampreia do rio Lima.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>DIW 2024</p>
+    </footer>
+</body>
 </html>
