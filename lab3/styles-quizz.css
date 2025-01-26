@@ -1,0 +1,120 @@
+/* Reset simples */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  /* Cabeçalho e rodapé */
+  header, footer {
+    background-color: #61992d;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Container principal */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Fieldsets */
+  fieldset {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+  }
+  
+  legend {
+    font-weight: bold;
+    color: #61992d;
+  }
+  
+  /* Labels */
+  label {
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Inputs e textarea */
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="time"],
+  input[type="color"],
+  input[type="number"],
+  input[type="range"],
+  textarea,
+  input[list],
+  select {
+    margin: 5px 0 15px 0;
+    padding: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Ajuste para radio e checkbox */
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  
+  /* Botões */
+  input[type="submit"],
+  input[type="reset"] {
+    padding: 8px 16px;
+    margin: 10px 5px 0 0;
+    background-color: #61992d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: #61992d;
+  }
+  
+  /* Input de imagem como "botão" */
+  input[type="image"] {
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Pequena media query para telas menores */
+  @media (max-width: 600px) {
+    label {
+      display: block;
+      width: auto;
+      margin-bottom: 5px;
+    }
+  }
+  

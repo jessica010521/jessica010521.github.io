@@ -1,80 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Quão bem conheces Ponte de Lima?</title>
+  <meta charset="UTF-8">
+  <title>Quão bem conheces Ponte de Lima?</title>
+  <!-- Liga ao ficheiro CSS externo -->
+  <link rel="stylesheet" href="styles-quizz.css">
 </head>
 <body>
-<header>
+  <header>
     <h1>Quizz</h1>
-</header>
-<main>
-    <form method="get" action="https://postman-echo.com/get">
-        <fieldset>
-          <legend>Informações Pessoais</legend>
-          <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" required autofocus>
-          <br>
-          <label for="apelido">Apelido:</label>
-          <input type="text" id="apelido" name="apelido" required>
-          <br>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </fieldset>
-    </form>
+  </header>
 
-    <fieldset>
+  <main>
+    <h2>Quizz</h2>
+    
+    <!-- Formulário com método GET e ação para postman-echo -->
+    <form id="quizForm" method="get" action="https://postman-echo.com/get">
+      
+      <!-- Área para dados pessoais -->
+      <fieldset>
+        <legend>Informações Pessoais</legend>
+        
+        <!-- Nome com vários atributos -->
+        <label for="nome">Nome:</label>
+        <input 
+          type="text" 
+          id="nome" 
+          name="nome" 
+          placeholder="Ex: Jéssica" 
+          required 
+          autofocus 
+          size="20" 
+          maxlength="30"
+          autocomplete="given-name"
+        >
+        <br>
+
+        <!-- Apelido -->
+        <label for="apelido">Apelido:</label>
+        <input 
+          type="text" 
+          id="apelido" 
+          name="apelido" 
+          placeholder="Ex: Silva" 
+          required 
+          maxlength="40"
+          autocomplete="family-name"
+        >
+        <br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="exemplo@email.com"
+          required
+        >
+      </fieldset>
+
+      <!-- Área do quizz em si -->
+      <fieldset>
         <legend>Quizz sobre Ponte de Lima</legend>
+        
+        <!-- Radio -->
         <p>Qual é o rio que atravessa Ponte de Lima?</p>
-        <input type="radio" id="rio-lima" name="rio" value="rio-lima" required>
+        <input type="radio" id="rio-lima" name="rio" value="Rio Lima" required>
         <label for="rio-lima">Rio Lima</label>
-        <input type="radio" id="rio-vizela" name="rio" value="rio-vizela" required>
+        
+        <input type="radio" id="rio-vizela" name="rio" value="Rio Vizela">
         <label for="rio-vizela">Rio Vizela</label>
         <br>
+
+        <!-- Checkbox -->
         <p>Qual é o principal produto agrícola de Ponte de Lima?</p>
-        <input type="checkbox" id="vinho" name="produto" value="vinho" required>
+        <input type="checkbox" id="vinho" name="produtoAgricola" value="Vinho" required>
         <label for="vinho">Vinho</label>
-        <input type="checkbox" id="frutas" name="produto" value="frutas" required>
+        
+        <input type="checkbox" id="frutas" name="produtoAgricola" value="Frutas">
         <label for="frutas">Frutas</label>
         <br>
-        <p>Em que ano foi fundada a cidade de Ponte de Lima?</p>
-        <input type="date" id="fundacao" name="fundacao" value="" required>
+
+        <!-- Data -->
+        <p>Em que ano foi fundada a cidade?</p>
+        <input type="date" id="fundacao" name="fundacao" required>
         <br>
-        <p>Qual é o horário de funcionamento do Mercado Municipal de Ponte de Lima?</p>
-        <input type="time" id="horario-mercado" name="horario-mercado" value="" required>
+
+        <!-- Hora -->
+        <p>Horário do Mercado Municipal?</p>
+        <input type="time" id="horario-mercado" name="horario-mercado" required>
         <br>
-        <p>Qual é a cor oficial da cidade de Ponte de Lima?</p>
-        <input type="color" id="cor-oficial" name="cor-oficial" value="" required>
+
+        <!-- Cor -->
+        <p>Qual a cor oficial da cidade?</p>
+        <input type="color" id="cor-oficial" name="cor-oficial" required>
         <br>
-        <p>Quantos distritos tem a cidade de Ponte de Lima?</p>
-        <input type="number" id="distritos" name="distritos" value="" required min="1" max="10" step="1">
+
+        <!-- Número (mínimo, máximo, passo) -->
+        <p>Quantos distritos tem a cidade?</p>
+        <input 
+          type="number" 
+          id="distritos" 
+          name="distritos" 
+          value="1" 
+          required 
+          min="1" 
+          max="10" 
+          step="1"
+        >
         <br>
-        <p>Como você avalia a qualidade de vida em Ponte de Lima?</p>
-        <input type="range" id="qualidade-vida" name="qualidade-vida" value="" required min="1" max="5" step="1">
+
+        <!-- Range -->
+        <p>Avaliação de qualidade de vida (1 a 5)?</p>
+        <input 
+          type="range" 
+          id="qualidade-vida" 
+          name="qualidade-vida" 
+          required
+          min="1" 
+          max="5" 
+          step="1" 
+          value="3"
+        >
         <br>
-        <p>Envie uma foto de seu local favorito em Ponte de Lima:</p>
-        <input type="image" id="local-favorito" name="local-favorito" value="" required>
+
+        <!-- "Botão" de imagem -->
+        <p>Envie uma foto do seu local favorito:</p>
+        <input 
+          type="image" 
+          id="local-favorito" 
+          name="local-favorito" 
+          src="images/upload.png" 
+          alt="Carregar foto" 
+          style="max-width: 80px;"
+        >
         <br>
-        <p>Conte sobre sua experiência em Ponte de Lima:</p>
-        <textarea id="experiencia" name="experiencia" required placeholder="Insira sua experiência"></textarea>
+
+        <!-- Textarea -->
+        <p>Fala um pouco da tua experiência:</p>
+        <textarea 
+          id="experiencia" 
+          name="experiencia" 
+          placeholder="Descreve a tua vivência por aqui" 
+          required 
+          rows="4" 
+          cols="50"
+        ></textarea>
         <br>
-        <p>Selecione sua atividade favorita em Ponte de Lima:</p>
-        <input list="atividades" id="atividade" name="atividade" value="" required>
+
+        <!-- Datalist -->
+        <p>Atividade favorita na região:</p>
+        <input 
+          list="atividades" 
+          id="atividade" 
+          name="atividade" 
+          placeholder="Escolhe uma..."
+          required
+        >
         <datalist id="atividades">
           <option value="Caminhada">
           <option value="Visita ao Museu">
           <option value="Degustação de vinhos">
         </datalist>
         <br>
+
+        <!-- Botões -->
         <input type="reset" value="Reset">
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Send">
       </fieldset>
     </form>
+  </main>
 
-</main>
-
-<footer>
+  <footer>
     <p>DIW 2024</p>
-</footer>
+  </footer>
+
+  <!-- Exemplo de 'form' para um input fora do form principal -->
+  <input 
+    type="hidden" 
+    name="extraInfo" 
+    value="valorOculto" 
+    form="quizForm"
+  >
 </body>
 </html>
