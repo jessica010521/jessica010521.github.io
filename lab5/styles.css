@@ -123,4 +123,15 @@
     margin-bottom: 16px;
     text-align: justify;
   }
+
+  /* Cursor zoom-in para links de imagens */
+.galeria a {
+  cursor: zoom-in;
+}
+
+/* Aplica a fonte "Cormorant Garamond" ao site */
+* {
+  font-family: 'Cormorant Garamond', serif;
+}
+
   
