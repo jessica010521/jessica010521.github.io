@@ -51,24 +51,62 @@
   }
   
   /* Nav */
-  nav {
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: #eaeaea;
-    padding: 10px 0;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin: 0 15px;
-    transition: color 0.2s;
-  }
-  
-  nav a:hover {
-    color: #56a133;
-  }
+ /* Navegação básica */
+nav {
+  display: flex; /* Organiza os links numa linha */
+  justify-content: center; /* Centraliza os links */
+  gap: 20px; /* Espaçamento entre os links */
+  padding: 10px 0; /* Espaçamento no menu */
+  background-color: #e3e6d7; /* Fundo claro */
+  border-bottom: 2px solid #61992d; /* Linha inferior */
+}
+
+/* Links no menu */
+nav a {
+  text-decoration: none; /* Remove sublinhado */
+  color: #3b5323; /* Verde escuro */
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 5px 10px; /* Espaçamento interno */
+  transition: color 0.3s, background-color 0.3s; /* Transições suaves */
+  display: flex;
+  align-items: center; /* Alinha texto e ícones */
+  gap: 5px; /* Espaço entre o ícone e o texto */
+}
+
+/* Pseudo-classes para links */
+nav a:link {
+  color: #3b5323; /* Cor inicial */
+}
+
+nav a:visited {
+  color: #4b6f3e; /* Cor para links visitados */
+}
+
+nav a:hover {
+  color: white; /* Cor do texto no hover */
+  background-color: #91b86d; /* Fundo verde claro no hover */
+  border-radius: 5px; /* Cantos arredondados no hover */
+}
+
+nav a:active {
+  color: white; /* Cor do texto quando clicado */
+  background-color: #61992d; /* Fundo verde tropa ao clicar */
+}
+
+/* Efeitos before/after no hover */
+nav a:hover::before {
+  content: "[";
+  color: #91b86d; /* Verde claro */
+  margin-right: 5px; /* Espaço antes do texto */
+}
+
+nav a:hover::after {
+  content: "]";
+  color: #91b86d; /* Verde claro */
+  margin-left: 5px; /* Espaço depois do texto */
+}
+
   
   /* Banner principal */
   .banner {
