@@ -29,6 +29,33 @@
     margin: 0;
   }
   
+  /* Estilizar o menu de navegação */
+nav {
+  display: flex; /* Torna os links uma flexbox */
+  justify-content: center; /* Centraliza os links */
+  align-items: center; /* Alinha os links verticalmente */
+  gap: 15px; /* Espaçamento entre os links */
+  padding: 10px 0; /* Espaçamento superior e inferior */
+  background-color: #e3e6d7; /* Fundo do menu */
+  border-bottom: 2px solid #61992d; /* Linha inferior */
+}
+
+/* Estilizar os links no menu */
+nav a {
+  text-decoration: none; /* Remove sublinhado */
+  color: #3b5323; /* Verde escuro */
+  font-weight: bold; /* Texto em negrito */
+  padding: 5px 10px; /* Espaçamento interno dos links */
+  border-radius: 5px; /* Cantos arredondados */
+  transition: background-color 0.3s, color 0.3s; /* Efeito hover suave */
+}
+
+/* Efeito hover nos links */
+nav a:hover {
+  background-color: #91b86d; /* Fundo verde claro */
+  color: white; /* Texto branco */
+}
+
   /* Container principal */
   main {
     max-width: 800px;
