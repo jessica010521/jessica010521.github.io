@@ -168,3 +168,114 @@ main {
 .content p {
   text-align: justify;
 }
+
+/* Estilos do menu dropdown */
+.dropdown {
+  display: none;
+  position: relative;
+}
+
+.dropdown button {
+  background-color: #61992d; /* Verde padrão */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  background-color: #91b86d; /* Verde claro */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #e3e6d7; /* Fundo claro */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #3b5323; /* Verde escuro */
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #91b86d; /* Verde claro */
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilos do menu dropdown */
+.dropdown {
+  display: none;
+  position: relative;
+}
+
+.dropdown button {
+  background-color: #61992d; /* Verde padrão */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  background-color: #91b86d; /* Verde claro */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #e3e6d7; /* Fundo claro */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #3b5323; /* Verde escuro */
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #91b86d; /* Verde claro */
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Media query para transformar o menu */
+@media (max-width: 768px) {
+  nav {
+    display: none; /* Esconde o menu horizontal */
+  }
+
+  .dropdown {
+    display: block; /* Mostra o dropdown */
+  }
+}

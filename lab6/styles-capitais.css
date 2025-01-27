@@ -325,3 +325,53 @@ footer p {
 p, h1, h2, h3, h4 {
   font-family: "Times New Roman", Times, serif;
 }
+
+/* Parallax Section */
+#parallax-section {
+  position: relative;
+  background-image: url('images/parallax-image.jpg'); /* Substituir pelo nome da tua imagem */
+  background-attachment: fixed; /* Efeito de parallax */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px; /* Altura do parallax */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Conteúdo sobre o parallax */
+#parallax-section .parallax-content {
+  position: relative;
+  z-index: 2; /* Garante que o texto está acima da imagem */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  border-radius: 10px;
+}
+
+#parallax-section .parallax-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#parallax-section .parallax-content p {
+  font-size: 1.2rem;
+}
+
+/* Ajuste do efeito em dispositivos menores */
+@media (max-width: 768px) {
+  #parallax-section {
+    background-attachment: scroll; /* Remove o efeito de parallax */
+  }
+
+  #parallax-section .parallax-content h2 {
+    font-size: 1.5rem;
+  }
+
+  #parallax-section .parallax-content p {
+    font-size: 1rem;
+  }
+}
