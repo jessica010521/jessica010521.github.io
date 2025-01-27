@@ -26,6 +26,39 @@
   margin-bottom: 10px;
 }
 
+/* Navegação no topo */
+nav {
+  grid-area: nav;
+  display: flex; /* Organiza os links numa linha */
+  justify-content: center; /* Centraliza os links */
+  flex-wrap: wrap; /* Permite quebrar linha em ecrãs menores */
+  gap: 15px; /* Espaçamento entre os links */
+  padding: 10px 0; /* Espaçamento superior e inferior */
+  background-color: #e3e6d7; /* Fundo claro */
+  border-bottom: 2px solid #61992d; /* Linha inferior */
+  position: relative; /* Mantém no topo */
+  z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+}
+
+/* Links no menu */
+nav a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #3b5323; /* Verde escuro */
+  font-weight: bold; /* Negrito no texto */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Cantos arredondados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+}
+
+/* Efeitos de hover e visited */
+nav a:hover {
+  background-color: #91b86d; /* Fundo verde claro */
+  color: white; /* Texto branco */
+}
+
+nav a:visited {
+  color: #4b6f3e; /* Verde mais escuro */
+}
 
 
 /* Estilos para tabelas */
@@ -102,48 +135,31 @@ footer p {
   margin: 0;
 }
 
-/* Navegação */
-nav {
-  grid-area: nav;
-  display: flex; /* Organiza os links numa linha */
-  justify-content: center; /* Centraliza os links */
-  flex-wrap: wrap; /* Ajusta os itens em ecrãs pequenos */
-  gap: 15px; /* Espaçamento entre os links */
-  padding: 10px 0; /* Espaçamento no menu */
-  background-color: #e3e6d7; /* Fundo claro */
-  border-bottom: 2px solid #61992d; /* Linha inferior */
+/* Ajuste do conteúdo principal para evitar sobreposição */
+main {
+  margin-right: 220px; /* Espaço para o navegador no lado direito */
+  padding: 20px;
 }
 
-nav a {
-  text-decoration: none; /* Remove sublinhado */
-  color: #3b5323; /* Verde escuro */
-  font-weight: bold;
-  padding: 5px 10px; /* Espaçamento interno */
-  display: flex;
-  align-items: center; /* Alinha texto e ícones */
-  gap: 5px; /* Espaço entre o ícone e o texto */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* Responsividade para dispositivos pequenos */
+@media (max-width: 767px) {
+  .vertical-nav {
+    position: static; /* Remove o comportamento fixo */
+    width: 100%; /* Ocupa toda a largura */
+    height: auto; /* Ajusta a altura automaticamente */
+    flex-direction: row; /* Alinha os links horizontalmente */
+    justify-content: center; /* Centraliza os links */
+    box-shadow: none; /* Remove a sombra */
+  }
 
-nav a:hover {
-  background-color: #91b86d;
-  color: white;
-  border-radius: 5px;
-}
+  .vertical-nav a {
+    margin: 0 10px; /* Espaço horizontal entre os links */
+    padding: 10px;
+  }
 
-nav a:visited {
-  color: #4b6f3e; /* Cor para links visitados */
-}
-
-nav a:last-child {
-  background-color: #ddd;
-  color: #3b5323;
-  border: 2px solid #3b5323;
-}
-
-nav a:last-child:hover {
-  background-color: #3b5323;
-  color: white;
+  main {
+    margin-right: 0; /* Remove o espaçamento lateral */
+  }
 }
 
 /* Conteúdo Principal */
@@ -194,22 +210,7 @@ main {
   text-align: justify;
 }
 
-/* Remover margin-bottom no menu */
-body.pontos-de-interesse nav {
-  margin-bottom: 0; /* Remove qualquer espaçamento desnecessário */
-}
 
-/* Remove margin do nav no contexto da página */
-body.pontos-de-interesse nav {
-  grid-area: nav;
-  margin: 0; /* Remove qualquer margem que esteja a empurrar o nav */
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px 0;
-  background-color: #e3e6d7;
-  border-bottom: 2px solid #61992d;
-}
 
 /* Certifica-te de que o main é corretamente alinhado */
 body.pontos-de-interesse main {
