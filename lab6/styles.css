@@ -1,271 +1,175 @@
 /* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7; /* Fundo ajustado */
-  color: #333;
-  line-height: 1.6;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  background-color: #61992d; /* Verde harmonizado */
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-header h1 {
-  margin-left: 20px;
-}
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  /* Cabeçalho e rodapé */
+  header,
+  footer {
+    background-color: #61992d; 
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Container principal */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Títulos */
+  h2 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  h3 {
+    margin: 10px 0;
+    font-weight: 600;
+  }
+  
+  /* Nav */
+ /* Navegação básica */
 nav {
-  display: flex;
+  display: flex; /* Organiza os links numa linha */
+  justify-content: center; /* Centraliza os links */
+  gap: 20px; /* Espaçamento entre os links */
+  padding: 10px 0; /* Espaçamento no menu */
+  background-color: #e3e6d7; /* Fundo claro */
+  border-bottom: 2px solid #61992d; /* Linha inferior */
 }
 
+/* Links no menu */
 nav a {
-  color: white;
-  padding: 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none; /* Remove sublinhado */
+  color: #3b5323; /* Verde escuro */
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 5px 10px; /* Espaçamento interno */
+  transition: color 0.3s, background-color 0.3s; /* Transições suaves */
+  display: flex;
+  align-items: center; /* Alinha texto e ícones */
+  gap: 5px; /* Espaço entre o ícone e o texto */
 }
 
-nav a:last-child {
-  background-color: #91b86d; /* Cor ajustada */
-  border-radius: 10px;
-}
-
+/* Pseudo-classes para links */
 nav a:link {
-  color: white;
+  color: #3b5323; /* Cor inicial */
 }
 
 nav a:visited {
-  color: #4b6f3e; /* Verde escuro */
+  color: #4b6f3e; /* Cor para links visitados */
 }
 
 nav a:hover {
-  background-color: #61992d; /* Verde escuro */
-  color: #ffffff;
-  border-radius: 6px;
+  color: white; /* Cor do texto no hover */
+  background-color: #91b86d; /* Fundo verde claro no hover */
+  border-radius: 5px; /* Cantos arredondados no hover */
 }
 
 nav a:active {
-  color: #bfff80; /* Tom de amarelo claro */
+  color: white; /* Cor do texto quando clicado */
+  background-color: #61992d; /* Fundo verde tropa ao clicar */
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333; /* Cinza escuro */
-  color: white;
-  margin-top: 20px;
+/* Efeitos before/after no hover */
+nav a:hover::before {
+  content: "[";
+  color: #91b86d; /* Verde claro */
+  margin-right: 5px; /* Espaço antes do texto */
 }
 
-footer p {
-  font-size: 0.9rem;
+nav a:hover::after {
+  content: "]";
+  color: #91b86d; /* Verde claro */
+  margin-left: 5px; /* Espaço depois do texto */
 }
 
-/* Poema */
-#poema {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh; 
-  background-color: #d4e1c7; /* Verde claro */
-}
-
-#poema div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#poema p {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-#poema p:first-child {
-  font-weight: bold;
-}
-
-#poema p:last-child {
-  font-style: italic;
-}
-
-/* Paisagem */
-#paisagem {
-  height: auto;
-  margin: 0;
-}
-
-.imagem-container {
-  width: 100%; 
-  margin: 0;
-  padding: 0;
-  position: relative;
-  display: inline-block;
-}
-
-.imagem-container img {
-  width: 100%; 
-  height: auto; 
-  display: block; 
-  margin: 0; 
-}
-
-.fotografo {
-  position: absolute;
-  bottom: 0;  
-  right: 0;  
-  color: white; 
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.5); 
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.fotografo a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.fotografo a:hover {
-  text-decoration: underline;
-}
-
-/* Cidades */
-#cidades {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: #f0f3ec; /* Fundo ajustado */
-}
-
-#cidades section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-}
-
-#cidades img {
-  width: 100px;
-  height: auto;
-  border-radius: 10px 0 10px 0; 
-}
-
-/* Experimentos */
-#experimenta {
-  padding: 20px;
-  background-color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-.circle-container {
-  display: flex;
-  gap: 20px;
-}
-
-.circle {
-  width: 100px;
-  height: 100px;
-  background-color: #91b86d; /* Verde claro */
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%; 
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.hidden-container {
-  text-align: center;
-}
-
-.trigger {
-  background-color: #61992d; /* Verde escuro */
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.hidden-content {
-  display: none;
-  margin-top: 10px;
-  background-color: #eaeaea;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.trigger:hover + .hidden-content {
-  display: block; 
-}
-
-/* Parallax Section */
-#parallax-section {
-  position: relative;
-  background-image: url('images/folhas.jpeg'); /* Substituir pelo nome da tua imagem */
-  background-attachment: fixed; /* Efeito de parallax */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 400px; /* Altura do parallax */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-#parallax-section .parallax-content {
-  position: relative;
-  z-index: 2; /* Garante que o texto está acima da imagem */
-  color: white;
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-  border-radius: 10px;
-}
-
-#parallax-section .parallax-content h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-#parallax-section .parallax-content p {
-  font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-  #parallax-section {
-    background-attachment: scroll; /* Remove o efeito de parallax */
+  
+  /* Banner principal */
+  .banner {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  /* Galeria de imagens */
+  .galeria {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .galeria a {
+    display: inline-block;
+    margin: 0 5px;
+    transition: transform 0.2s;
+  }
+  
+  .galeria a:hover {
+    transform: scale(1.05);
+  }
+  
+  .galeria img {
+    max-width: 180px;
+    border-radius: 4px;
+  }
+  
+  .poema {
+    white-space: pre-line;
+    text-align: left; /* ou justify */
+    font-style: italic;
+    line-height: 1.6;
   }
 
-  #parallax-section .parallax-content h2 {
-    font-size: 1.5rem;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  table, th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Ajuste dos parágrafos, caso precises */
+  p {
+    margin-bottom: 16px;
+    text-align: justify;
   }
 
-  #parallax-section .parallax-content p {
-    font-size: 1rem;
-  }
+  /* Cursor zoom-in para links de imagens */
+.galeria a {
+  cursor: zoom-in;
 }
+
+/* Aplica a fonte "Cormorant Garamond" ao site */
+* {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+  

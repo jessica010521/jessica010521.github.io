@@ -4,25 +4,11 @@
     <meta charset="UTF-8">
     <title>Ponte de Lima Informações</title>
     <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="responsive.css">
-
 </head>
 <body>
     <header>
         <h1>Querida Ponte de Lima</h1>
     </header>
-
-    <nav>
-      <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
-        <a href="quizz.html">Quizz</a>
-        <a href="viagem.html">Viagem</a> 
-        <a href="pontosinteresse.html">Pontos de Interesse</a> 
-        <a href="capitais.html">Capital</a> 
-
-    </nav>
 
     <main>
         <!-- Título principal da secção -->
@@ -32,40 +18,58 @@
         <p>Aqui encontras alguns dados e curiosidades sobre Ponte de Lima.</p>
 
         <!-- Menu de navegação principal -->
-        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a> 
+            <a href="pontosinteresse.html">Pontos de Interesse</a> 
+            <a href="capitais.html">Capital</a> 
+
+        </nav>
 
         <img src="images/PL.jpeg" alt="Vista de Ponte de Lima" class="banner">
 
+        <!-- Tabela com 3 colunas e 4 linhas, usando colspan e rowspan -->
         <table>
+            <!-- Primeira linha: "Demografia" com rowSpan=2 -->
             <tr>
-              <th rowspan="2">Demografia</th>
-              <th>População</th>
-              <td>43.000 hab</td>
+                <th rowspan="2">Demografia</th>
+                <th>População</th>
+                <td>43.000 hab</td>
             </tr>
             <tr>
-              <th>Densidade populacional</th>
-              <td>134 hab/km²</td>
+                <th>Densidade populacional</th>
+                <td>134 hab/km²</td>
+            </tr>
+        
+            <!-- Segunda parte: "Geografia" com rowSpan=3 -->
+            <tr>
+                <th rowspan="3">Geografia</th>
+                <th>Área</th>
+                <td>320 km²</td>
             </tr>
             <tr>
-              <th rowspan="3">Geografia</th>
-              <th>Área</th>
-              <td>320 km²</td>
+                <th>Região</th>
+                <td>Minho_Lima</td>
             </tr>
             <tr>
-              <th>Região</th>
-              <td>Minho_Lima</td>
+                <th>País</th>
+                <td>Portugal</td>
             </tr>
+        
+            <!-- Última linha: "Website" ocupa a primeira coluna e a 2ª e 3ª colunas são unidas -->
             <tr>
-              <th>País</th>
-              <td>Portugal</td>
+                <th>Website</th>
+                <td colspan="2">
+                    <a href="https://www.cm-pontedelima.pt/" target="_blank">
+                        www.cm-pontedelima.pt
+                    </a>
+                </td>
             </tr>
-            <tr>
-              <th>Website</th>
-              <td colspan="2">
-                <a href="https://www.cm-pontedelima.pt/" target="_blank">www.cm-pontedelima.pt</a>
-              </td>
-            </tr>
-          </table>          
+        </table>
         
 
         <!-- Lista de curiosidades -->
