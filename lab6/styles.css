@@ -29,15 +29,15 @@
 /* Navegação no topo */
 nav {
   grid-area: nav;
-  display: flex; /* Organiza os links numa linha */
-  justify-content: center; /* Centraliza os links */
-  flex-wrap: wrap; /* Permite quebrar linha em ecrãs menores */
-  gap: 15px; /* Espaçamento entre os links */
-  padding: 10px 0; /* Espaçamento superior e inferior */
-  background-color: #e3e6d7; /* Fundo claro */
-  border-bottom: 2px solid #61992d; /* Linha inferior */
-  position: relative; /* Mantém no topo */
-  z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0;
+  background-color: #e3e6d7;
+  border-bottom: 2px solid #61992d;
+  position: sticky; /* Mantém o nav no topo ao rolar */
+  top: 0; /* Garante que fica no topo */
+  z-index: 1000; /* Coloca o nav acima de outros elementos */
 }
 
 /* Links no menu */
