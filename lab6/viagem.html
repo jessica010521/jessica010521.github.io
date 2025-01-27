@@ -1,193 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Planeamento de Viagem</title>
-  <!-- Ligo ao CSS para esta página -->
-  <link rel="stylesheet" href="styles-viagem.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem - Ponte de Lima</title>
+    <link rel="icon" href="images/iconPL.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Querida Ponte de Lima</h1>
-  </header>
+    <header>
+        <h1>Viagem a Ponte de Lima</h1>
+    </header>
 
-  <main>
-    <h2>Planeamento de Viagem</h2>
-    
-    <!-- Menu de navegação (igual ao resto do site, se quiseres manter) -->
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="local.html">Localização</a>
-      <a href="multimedia.html">Multimédia</a>
-      <a href="info.html">Informação</a>
-      <a href="quizz.html">Quizz</a>
-      <a href="viagem.html">Viagem</a> 
-      <a href="pontosinteresse.html">Pontos de Interesse</a> 
-      <a href="capitais.html">Capital</a> 
+    <nav class="desktop-menu">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="local.html"><i class="fas fa-map-marker-alt"></i> Localização</a>
+        <a href="multimedia.html"><i class="fas fa-photo-video"></i> Multimédia</a>
+        <a href="info.html"><i class="fas fa-info-circle"></i> Informação</a>
+        <a href="quizz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+        <a href="viagem.html"><i class="fas fa-plane"></i> Viagem</a>
+        <a href="pontosinteresse.html"><i class="fas fa-landmark"></i> Pontos de Interesse</a>
+        <a href="capitais.html"><i class="fas fa-globe"></i> Capitais</a>
+    </nav>
 
-  </nav>
+    <nav class="mobile-menu">
+        <div class="dropdown">
+            Menu
+            <div class="dropdown-content">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="local.html"><i class="fas fa-map-marker-alt"></i> Localização</a>
+                <a href="multimedia.html"><i class="fas fa-photo-video"></i> Multimédia</a>
+                <a href="info.html"><i class="fas fa-info-circle"></i> Informação</a>
+                <a href="quizz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+                <a href="viagem.html"><i class="fas fa-plane"></i> Viagem</a>
+                <a href="pontosinteresse.html"><i class="fas fa-landmark"></i> Pontos de Interesse</a>
+                <a href="capitais.html"><i class="fas fa-globe"></i> Capitais</a>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Formulário de Viagem -->
-    <form method="get" action="https://postman-echo.com/get">
-      
-      <fieldset>
-        <legend>Informações Pessoais</legend>
+    <main class="viagem-page">
+        <!-- Formulário -->
+        <form method="get" action="https://postman-echo.com/get" id="quizForm">
+            <!-- Imagem e Descrição -->
+            <img src="images/avenida_platanos_pl.jpeg" 
+                 alt="Avenida dos Plátanos, uma das mais belas paisagens de Ponte de Lima." 
+                 style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+            
+            <p style="text-align: center; font-size: 1.2rem; color: #2c3e50; margin-bottom: 20px;">
+                As paisagens verdes e naturais de Ponte de Lima são verdadeiramente deslumbrantes, como a icónica Avenida dos Plátanos, 
+                que convida a um passeio tranquilo em harmonia com a natureza.
+            </p>
+
+            <!-- Informações Pessoais -->
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <label for="nome">Nome:</label>
+                <input 
+                    type="text" 
+                    id="nome" 
+                    name="nome" 
+                    placeholder="Ex: Jéssica" 
+                    required 
+                    autofocus 
+                    size="20" 
+                    maxlength="30"
+                    autocomplete="given-name"
+                >
         
-        <label for="nome">Nome:</label>
-        <input 
-          type="text" 
-          id="nome" 
-          name="nome" 
-          placeholder="Insira seu nome" 
-          autocomplete="on" 
-          size="20" 
-          maxlength="50" 
-          required 
-          autofocus
-        >
-        <br>
-
-        <label for="apelido">Apelido:</label>
-        <input 
-          type="text" 
-          id="apelido" 
-          name="apelido" 
-          placeholder="Insira seu apelido" 
-          autocomplete="on" 
-          size="20" 
-          maxlength="50" 
-          required
-        >
-        <br>
-
-        <label for="email">Email:</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="Insira seu email" 
-          autocomplete="on" 
-          size="20" 
-          maxlength="50" 
-          required
-        >
-      </fieldset>
-    
-      <fieldset>
-        <legend>Informações de Viagem</legend>
+                <label for="apelido">Apelido:</label>
+                <input 
+                    type="text" 
+                    id="apelido" 
+                    name="apelido" 
+                    placeholder="Ex: Marques" 
+                    required 
+                    maxlength="40"
+                    autocomplete="family-name"
+                >
         
-        <label for="data-partida">Data de partida:</label>
-        <input 
-          type="date" 
-          id="data-partida" 
-          name="data-partida" 
-          required
-        >
-        <br>
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="exemplo@email.com"
+                    required
+                >
+            </fieldset>
 
-        <label for="data-regresso">Data de regresso:</label>
-        <input 
-          type="date" 
-          id="data-regresso" 
-          name="data-regresso" 
-          required
-        >
-        <br>
+            <!-- Informações de Viagem -->
+            <fieldset>
+                <legend>Detalhes da Viagem</legend>
+                <label for="dataPartida">Data de partida:</label>
+                <input type="date" id="dataPartida" name="dataPartida" required>
 
-        <label for="numero-passageiros">Número de passageiros:</label>
-        <input 
-          type="number" 
-          id="numero-passageiros" 
-          name="numero-passageiros" 
-          required 
-          min="1" 
-          max="10" 
-          step="1"
-        >
-        <br>
+                <label for="dataRegresso">Data de regresso:</label>
+                <input type="date" id="dataRegresso" name="dataRegresso" required>
 
-        <p>Meio de transporte favorito:</p>
-        <input 
-          type="radio" 
-          id="carro" 
-          name="meio-transporte" 
-          value="carro" 
-          required
-        >
-        <label for="carro">Carro</label>
+                <label for="number">Número de passageiros:</label>
+                <input type="number" id="number" name="number" min="1" max="30" step="1" required>
+            </fieldset>
 
-        <input 
-          type="radio" 
-          id="comboio" 
-          name="meio-transporte" 
-          value="comboio"
-        >
-        <label for="comboio">Comboio</label>
+            <!-- Preferências -->
+            <fieldset>
+                <legend>Preferências</legend>
+                <label for="transporte">Qual é o meio de transporte que prefere?</label>
+                <select id="transporte" name="transporte" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="Avião">Avião</option>
+                    <option value="Carro">Carro</option>
+                    <option value="Barco">Barco</option>
+                    <option value="Bicicleta">Bicicleta</option>
+                    <option value="Comboio/Metro">Comboio/Metro</option>
+                    <option value="Mota">Mota</option>
+                    <option value="As minhas pernas">As minhas pernas</option>
+                    <option value="Não há outro, o tapete do Aladin não existe">Não há outro, o tapete do Aladin não existe</option>
+                </select>
 
-        <input 
-          type="radio" 
-          id="aviao" 
-          name="meio-transporte" 
-          value="aviao"
-        >
-        <label for="aviao">Avião</label>
+                <label>Qual o serviço que deseja na sua viagem?</label>
+                <label><input type="radio" name="servico" value="basico" required> Básico</label>
+                <label><input type="radio" name="servico" value="premium"> Premium</label>
 
-        <input 
-          type="radio" 
-          id="outro" 
-          name="meio-transporte" 
-          value="outro"
-        >
-        <label for="outro">Outro</label>
-        <br>
+                <label for="pedidosEspeciais">Pedidos especiais:</label>
+                <textarea id="pedidosEspeciais" name="pedidosEspeciais" rows="4" cols="50" placeholder="Descreva aqui os seus pedidos especiais."></textarea>
+            </fieldset>
 
-        <p>Qual o serviço que deseja na sua viagem:</p>
-        <input 
-          type="radio" 
-          id="basico" 
-          name="servico" 
-          value="basico" 
-          required
-        >
-        <label for="basico">Básico</label>
+            <!-- Orçamento -->
+            <fieldset>
+                <legend>Orçamento</legend>
+                <label for="valor">Qual o valor que espera gastar por pessoa e por dia?</label>
+                <input type="number" id="valor" name="valor" min="1" step="0.01" required placeholder="Ex: 50.00">
+            </fieldset>
 
-        <input 
-          type="radio" 
-          id="premium" 
-          name="servico" 
-          value="premium"
-        >
-        <label for="premium">Premium</label>
-        <br>
+            <!-- Botões -->
+            <fieldset>
+                <input type="reset" value="Reiniciar Formulário">
+                <input type="submit" value="Enviar">
+            </fieldset>
+        </form>
+    </main>
 
-        <label for="pedidos-especiais">Pedidos especiais:</label>
-        <textarea 
-          id="pedidos-especiais" 
-          name="pedidos-especiais" 
-          required 
-          placeholder="Insira seus pedidos especiais"
-        ></textarea>
-        <br>
-
-        <label for="valor-gasto">Valor esperado por pessoa/dia:</label>
-        <input 
-          type="number" 
-          id="valor-gasto" 
-          name="valor-gasto" 
-          required 
-          min="1" 
-          max="1000" 
-          step="1"
-        >
-      </fieldset>
-    
-      <input type="reset" value="Reset">
-      <input type="submit" value="Enviar">
-    </form>
-  </main>
-
-  <footer>
-    <p>DIW 2024</p>
-  </footer>
+    <footer>
+        <p>Jéssica Sofia | Universidade Lusófona | DIW 2024 | Ponte de Lima</p>
+    </footer>
 </body>
 </html>

@@ -2,39 +2,52 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Ponte de Lima Informações</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações - Ponte de Lima</title>
+    <link rel="icon" href="images/iconPL.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
 </head>
 <body>
-    <header>
-        <h1>Querida Ponte de Lima</h1>
-    </header>
-
-    <main>
-        <!-- Título principal da secção -->
-        <h2>Informações</h2>
-
-        <!-- Pequeno texto introdutório -->
-        <p>Aqui encontras alguns dados e curiosidades sobre Ponte de Lima.</p>
-
-        <!-- Menu de navegação principal -->
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="local.html">Localização</a>
-            <a href="multimedia.html">Multimédia</a>
-            <a href="info.html">Informação</a>
-            <a href="quizz.html">Quizz</a>
-            <a href="viagem.html">Viagem</a> 
-            <a href="pontosinteresse.html">Pontos de Interesse</a> 
-            <a href="capitais.html">Capital</a> 
-
+    <header><h1>Informações</h1></header>
+    <body class="grid">
+        <nav class="desktop-menu">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="local.html"><i class="fas fa-map-marker-alt"></i> Localização</a>
+            <a href="multimedia.html"><i class="fas fa-photo-video"></i> Multimédia</a>
+            <a href="info.html"><i class="fas fa-info-circle"></i> Informação</a>
+            <a href="quizz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+            <a href="viagem.html"><i class="fas fa-plane"></i> Viagem</a>
+            <a href="pontosinteresse.html"><i class="fas fa-landmark"></i> Pontos de Interesse</a>
+            <a href="capitais.html"><i class="fas fa-globe"></i> Capitais</a>
         </nav>
+    
+        <nav class="mobile-menu">
+            <div class="dropdown">
+                Menu
+                <div class="dropdown-content">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="local.html"><i class="fas fa-map-marker-alt"></i> Localização</a>
+                    <a href="multimedia.html"><i class="fas fa-photo-video"></i> Multimédia</a>
+                    <a href="info.html"><i class="fas fa-info-circle"></i> Informação</a>
+                    <a href="quizz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+                    <a href="viagem.html"><i class="fas fa-plane"></i> Viagem</a>
+                    <a href="pontosinteresse.html"><i class="fas fa-landmark"></i> Pontos de Interesse</a>
+                    <a href="capitais.html"><i class="fas fa-globe"></i> Capitais</a>
+                </div>
+            </div>
+        </nav>
+    </body>
+   
+    </div>
+    <body class="info-page"> 
+        <p>Apresentamos uma tabela que representa alguns dados estatísticos sobre a vila de Ponte de Lima, com o link da sua Câmara Municipal disponível. Descobre também curiosidades que tornam esta vila tão especial!</p>
 
-        <img src="images/PL.jpeg" alt="Vista de Ponte de Lima" class="banner">
-
-        <!-- Tabela com 3 colunas e 4 linhas, usando colspan e rowspan -->
         <table>
-            <!-- Primeira linha: "Demografia" com rowSpan=2 -->
+            <!-- Primeira parte: Demografia -->
             <tr>
                 <th rowspan="2">Demografia</th>
                 <th>População</th>
@@ -45,7 +58,7 @@
                 <td>134 hab/km²</td>
             </tr>
         
-            <!-- Segunda parte: "Geografia" com rowSpan=3 -->
+            <!-- Segunda parte: Geografia -->
             <tr>
                 <th rowspan="3">Geografia</th>
                 <th>Área</th>
@@ -60,7 +73,7 @@
                 <td>Portugal</td>
             </tr>
         
-            <!-- Última linha: "Website" ocupa a primeira coluna e a 2ª e 3ª colunas são unidas -->
+            <!-- Última parte: Website -->
             <tr>
                 <th>Website</th>
                 <td colspan="2">
@@ -71,20 +84,35 @@
             </tr>
         </table>
         
-
-        <!-- Lista de curiosidades -->
-        <h3>Curiosidades</h3>
+        <h3>Curiosidades sobre Ponte de Lima</h3>
         <ul>
-            <li>É considerada a vila mais antiga de Portugal, com foral atribuído em 1125.</li>
-            <li>O Rio Lima era antigamente chamado de “Rio do Esquecimento” pelos romanos.</li>
-            <li>A ponte medieval/romana que atravessa o rio tem 24 arcos, alguns originais do século I.</li>
-            <li>Realiza anualmente as “Feiras Novas”, festa popular desde o século XIX.</li>
-            <li>A gastronomia local destaca o arroz de sarrabulho e a lampreia do rio Lima.</li>
-        </ul>
-    </main>
+            <li>Ponte de Lima é considerada a vila mais antiga de Portugal, com origens que remontam ao ano de 1125.</li>
+            <li>A ponte que dá nome à vila tem origens romanas e medievais, sendo um marco histórico e cultural.</li>
+            <li>A vila é famosa pelas Feiras Novas, uma das festas populares mais antigas e tradicionais do país.</li>
+            <li>Os jardins de Ponte de Lima são conhecidos internacionalmente, com destaque para o Festival Internacional de Jardins.</li>
+            <li>A gastronomia típica inclui o famoso arroz de sarrabulho e o vinho verde da região.</li>
+        </ul>        
 
-    <footer>
-        <p>DIW 2024</p>
-    </footer>
+        <article>
+            <h2>Explora a Música de Ponte de Lima</h2>
+            <p>Descobre a essência musical de Ponte de Lima com esta playlist no Spotify, destacando um cantor típico da região. Aprecia os sons tradicionais que refletem a alma desta vila única.</p>
+        
+            <!-- Ligação ao Spotify -->
+            <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/artist/11tH12wBu0TKagItfKNBPI?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </article>
+        
+    
+      
 </body>
+<footer>
+    <p>Jéssica Sofia | Universidade Lusófona | DIW 2024 | Ponte de Lima</p>
+</footer>
 </html>

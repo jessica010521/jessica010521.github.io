@@ -2,80 +2,109 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Ponte de Lima Multimédia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimédia - Ponte de Lima</title>
+    <link rel="icon" href="images/iconPL.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Querida Ponte de Lima</h1>
-    </header>
 
-    <main>
-        <h2>Multimédia</h2>
+<body class="grid multimedia-page">
+    <header><h1>Multimédia</h1></header>
+    <nav class="desktop-menu">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="local.html"><i class="fas fa-map-marker-alt"></i> Localização</a>
+        <a href="multimedia.html"><i class="fas fa-photo-video"></i> Multimédia</a>
+        <a href="info.html"><i class="fas fa-info-circle"></i> Informação</a>
+        <a href="quizz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+        <a href="viagem.html"><i class="fas fa-plane"></i> Viagem</a>
+        <a href="pontosinteresse.html"><i class="fas fa-landmark"></i> Pontos de Interesse</a>
+        <a href="capitais.html"><i class="fas fa-globe"></i> Capitais</a>
+    </nav>
 
-        <!-- Links Âncora para cada seção de h3 -->
-        <nav class="ancoras">
-          <a href="#fotografias">Fotografias</a> | 
-          <a href="#video">Vídeo</a> | 
-          <a href="#poema">Poema</a>
-        </nav>
+    <nav class="mobile-menu">
+        <div class="dropdown">
+            Menu
+            <div class="dropdown-content">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="local.html"><i class="fas fa-map-marker-alt"></i> Localização</a>
+                <a href="multimedia.html"><i class="fas fa-photo-video"></i> Multimédia</a>
+                <a href="info.html"><i class="fas fa-info-circle"></i> Informação</a>
+                <a href="quizz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+                <a href="viagem.html"><i class="fas fa-plane"></i> Viagem</a>
+                <a href="pontosinteresse.html"><i class="fas fa-landmark"></i> Pontos de Interesse</a>
+                <a href="capitais.html"><i class="fas fa-globe"></i> Capitais</a>
+            </div>
+        </div>
+    </nav>
+    </nav>
 
-        <!-- Menu principal -->
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="local.html">Localização</a>
-            <a href="multimedia.html">Multimédia</a>
-            <a href="info.html">Informação</a>
-            <a href="quizz.html">Quizz</a>
-            <a href="viagem.html">Viagem</a> 
-            <a href="pontosinteresse.html">Pontos de Interesse</a> 
-            <a href="capitais.html">Capital</a> 
+    <section class="mini-navigation">
+        <a href="#fotografias">Fotografias</a>
+        <a href="#video">Vídeo</a>
+        <a href="#poema">Poema</a>
+    </section>
 
-        </nav>
-        <!-- Fotografia -->
-        <h3 id="fotografias">Fotografias</h3>
-        <img src="images/PL.jpeg" alt="Vista de Ponte de Lima" class="banner">
-        <p class="galeria">
-            <a href="images/PL1_grande.jpeg" target="_blank">
-                <img src="images/PL1_pequeno.jpeg" alt="Foto 1">
-            </a>
-            <a href="images/PL2_grande.jpeg" target="_blank">
-                <img src="images/PL2_pequeno.jpeg" alt="Foto 2">
-            </a>
-            <a href="images/PL3_grande.jpeg" target="_blank">
-                <img src="images/PL3_pequeno.jpeg" alt="Foto 3">
-            </a>
-        </p>
+    <input type="checkbox" id="toggle-asides" style="display: none;">
+    <label for="toggle-asides" class="toggle-button">Carrega para uma vista linda...</label>
+    <div class="aside-container">
+        <aside class="aside-item">
+            <img src="images/paisagem_PL.jpeg" alt="Placa Rio Lima ">
+        </aside>
+    </div>
+    
+    <h3 id="fotografias">Fotografias</h3>
+    <div class="gallery">
+        <a href="images/PL1_pequeno.jpeg" target="frameFotos">
+            <img src="images/PL1_pequeno.jpeg" alt="Foto da Prisão Antiga" width="150">
+        </a>
+        <a href="images/costa_grande.jpg" target="frameFotos">
+            <img src="images/PL2_pequeno.jpeg" alt="Ponte de Lima Antiga" width="150">
+        </a>
+        <a href="images/Forum_grande.png" target="frameFotos">
+            <img src="images/PL3_pequeno.jpeg" alt="Ponte e chafariz do Largo " width="150">
+        </a>
+    </div>
 
-        <!-- Vídeo -->
-        <h3 id="video">Vídeo</h3>
-        <p>
-            <iframe width="560" height="315" 
-                src="https://www.youtube.com/watch?v=aNCwgAcRYi4&list=PLj-szXPZWe7YMb8FSWQViL0FdO--cdIBo&index=3" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </p>
+    <div class="big-photo">
+        <img src="images/cavaleiro_rio_lima.jpeg" alt="Estátua icónica do cavaleiro em frente ao Rio Lima " width="600">
+    </div>
 
-        <!-- Poema -->
-        <h3 id="poema">Poema</h3>
-        <p class="poema">
-            Ponte de Lima, serena e gentil,  
-            Guardas histórias nas pedras do teu chão,  
-            Onde o rio corre suave e subtil,  
-            E a vida encontra um doce coração. 
 
-            Teus campos verdes emolduram memórias,  
-            Das gentes que passam e deixam saudade,  
-            Em teu abraço, encontro muitas glórias,  
-            E na tua paz, a eterna felicidade.
-        </p>
-    </main>
-
+    <h3 id="video">Vídeo</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/aNCwgAcRYi4?si=zPfZNVqApDbq2Uws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h3 id="poema">Poema</h3>
+    <p><i>
+        Ponte de Lima, vila encantada, <br>
+        Entre vales verdes, sua história é contada, <br>
+        O rio sereno que espelha o luar, <br>
+        Guarda segredos que o tempo vem revelar. <br><br>
+    
+        Nas pedras da ponte, há passos de outrora, <br>
+        Vozes de outros tempos, ecoam ainda agora. <br>
+        As margens floridas, de encanto e de cor, <br>
+        São retratos vivos de um mundo de amor. <br><br>
+    
+        Nos jardins que florescem com a brisa do Minho, <br>
+        Há um silêncio que fala ao coração sozinho. <br>
+        Entre vinhas e campos, a alma se encontra, <br>
+        E na simplicidade, a vida se aponta. <br><br>
+    
+        Ponte de Lima, de tradição e raiz, <br>
+        Onde as Feiras Novas fazem o povo feliz, <br>
+        Há risos e danças, o folclore a soar, <br>
+        Um brinde ao passado que nos faz recordar. <br><br>
+    
+        A vila respira em cada estação, <br>
+        No outono dourado ou na primavera em canção. <br>
+        És poema vivo, és terra sem fim, <br>
+        Ponte de Lima, para sempre em mim.  
+    </i></p>
+    
+    
     <footer>
-        <p>DIW 2024</p>
+        <p>Jéssica Sofia | Universidade Lusófona | DIW 2024 | Ponte de Lima</p>
     </footer>
 </body>
 </html>

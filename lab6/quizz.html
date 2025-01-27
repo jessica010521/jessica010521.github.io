@@ -1,170 +1,195 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Quão bem conheces Ponte de Lima?</title>
-  <link rel="stylesheet" href="styles-quizz.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz - Ponte de Lima</title>
+    <link rel="icon" href="images/iconPL.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="local.html">Localização</a>
-    <a href="multimedia.html">Multimédia</a>
-    <a href="info.html">Informação</a>
-    <a href="quizz.html">Quizz</a>
-    <a href="viagem.html">Viagem</a> 
-    <a href="pontosinteresse.html">Pontos de Interesse</a> 
-    <a href="capitais.html">Capital</a> 
-
-</nav>
-
-  <header>
-    <h1>Quizz</h1>
-  </header>
-
-  <main>
-    <h2>Quizz</h2>
-
-    <form id="quizForm" method="get" action="https://postman-echo.com/get">
-      
-      <!-- Dados pessoais -->
-      <fieldset>
-        <legend>Informações Pessoais</legend>
+    <header><h1>Quizz</h1></header>
+    <body class="grid">
+        <nav class="desktop-menu">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="local.html"><i class="fas fa-map-marker-alt"></i> Localização</a>
+            <a href="multimedia.html"><i class="fas fa-photo-video"></i> Multimédia</a>
+            <a href="info.html"><i class="fas fa-info-circle"></i> Informação</a>
+            <a href="quizz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+            <a href="viagem.html"><i class="fas fa-plane"></i> Viagem</a>
+            <a href="pontosinteresse.html"><i class="fas fa-landmark"></i> Pontos de Interesse</a>
+            <a href="capitais.html"><i class="fas fa-globe"></i> Capitais</a>
+        </nav>
+    
+        <nav class="mobile-menu">
+            <div class="dropdown">
+                Menu
+                <div class="dropdown-content">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="local.html"><i class="fas fa-map-marker-alt"></i> Localização</a>
+                    <a href="multimedia.html"><i class="fas fa-photo-video"></i> Multimédia</a>
+                    <a href="info.html"><i class="fas fa-info-circle"></i> Informação</a>
+                    <a href="quizz.html"><i class="fas fa-question-circle"></i> Quiz</a>
+                    <a href="viagem.html"><i class="fas fa-plane"></i> Viagem</a>
+                    <a href="pontosinteresse.html"><i class="fas fa-landmark"></i> Pontos de Interesse</a>
+                    <a href="capitais.html"><i class="fas fa-globe"></i> Capitais</a>
+                </div>
+            </div>
+        </nav>
+    </body>
+    
+    <body class="quiz-page">
+        <form id="quizForm" method="get" action="https://postman-echo.com/get">
+            <!-- Imagem representativa -->
+            <img src="images/paisagem_PL.jpeg" 
+                 alt="Panorâmica de Ponte de Lima, mostrando sua bela ponte e paisagem cultural"
+                 style="max-width: 100%; height: auto; margin-bottom: 20px;">
         
-        <label for="nome">Nome:</label>
-        <input 
-          type="text" 
-          id="nome" 
-          name="nome" 
-          placeholder="Ex: Jéssica" 
-          required 
-          autofocus 
-          size="20" 
-          maxlength="30"
-          autocomplete="given-name"
-        >
-
-        <label for="apelido">Apelido:</label>
-        <input 
-          type="text" 
-          id="apelido" 
-          name="apelido" 
-          placeholder="Ex: Silva" 
-          required 
-          maxlength="40"
-          autocomplete="family-name"
-        >
-
-        <label for="email">Email:</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="exemplo@email.com"
-          required
-        >
-      </fieldset>
-
-      <!-- Quizz -->
-      <fieldset>
-        <legend>Quizz sobre Ponte de Lima</legend>
+            <!-- Informações pessoais -->
+            <fieldset>
+                <legend>Informações Pessoais</legend>
         
-        <p>Qual é o rio que atravessa Ponte de Lima?</p>
-        <input type="radio" id="rio-lima" name="rio" value="Rio Lima" required>
-        <label for="rio-lima">Rio Lima</label>
-        <input type="radio" id="rio-vizela" name="rio" value="Rio Vizela">
-        <label for="rio-vizela">Rio Vizela</label>
+                <label for="nome">Nome:</label>
+                <input 
+                    type="text" 
+                    id="nome" 
+                    name="nome" 
+                    placeholder="Ex: Jéssica" 
+                    required 
+                    autofocus 
+                    size="20" 
+                    maxlength="30"
+                    autocomplete="given-name"
+                >
+        
+                <label for="apelido">Apelido:</label>
+                <input 
+                    type="text" 
+                    id="apelido" 
+                    name="apelido" 
+                    placeholder="Ex: Marques" 
+                    required 
+                    maxlength="40"
+                    autocomplete="family-name"
+                >
+        
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="exemplo@email.com"
+                    required
+                >
+            </fieldset>
+        
+            <!-- Quiz -->
+            <fieldset>
+                <legend>Quizz sobre Ponte de Lima</legend>
+        
+                <p>Sabias que Ponte de Lima é considerada a vila mais antiga de Portugal?</p>
+                <input 
+                    type="text" 
+                    id="q1" 
+                    name="q1" 
+                    placeholder="Responda sim ou não" 
+                    required
+                >
+        
+                <p>Qual é o rio que atravessa Ponte de Lima?</p>
+<p>
+  <label><input type="radio" id="rio-lima" name="rio" value="Rio Lima" required> Rio Lima</label>
+  <label><input type="radio" id="rio-vizela" name="rio" value="Rio Vizela"> Rio Vizela</label>
+</p>
 
-        <p>Qual é o principal produto agrícola de Ponte de Lima?</p>
-        <input type="checkbox" id="vinho" name="produtoAgricola" value="Vinho" required>
-        <label for="vinho">Vinho</label>
-        <input type="checkbox" id="frutas" name="produtoAgricola" value="Frutas">
-        <label for="frutas">Frutas</label>
+<p>Qual é o principal produto agrícola de Ponte de Lima?</p>
+<p>
+  <label><input type="checkbox" id="vinho" name="produtoAgricola" value="Vinho" required> Vinho</label>
+  <label><input type="checkbox" id="frutas" name="produtoAgricola" value="Frutas"> Frutas</label>
+</p>
 
-        <p>Em que ano foi fundada a cidade?</p>
-        <input type="date" id="fundacao" name="fundacao" required>
-
-        <p>Horário do Mercado Municipal?</p>
-        <input type="time" id="horario-mercado" name="horario-mercado" required>
-
-        <p>Qual a cor oficial da cidade?</p>
-        <input type="color" id="cor-oficial" name="cor-oficial" required>
-
-        <p>Quantos distritos tem a cidade?</p>
-        <input 
-          type="number" 
-          id="distritos" 
-          name="distritos" 
-          value="1" 
-          required 
-          min="1" 
-          max="10" 
-          step="1"
-        >
-
-        <p>Avaliação de qualidade de vida (1 a 5)?</p>
-        <input 
-          type="range" 
-          id="qualidade-vida" 
-          name="qualidade-vida" 
-          required
-          min="1" 
-          max="5" 
-          step="1" 
-          value="3"
-        >
-
-        <p>Envie uma foto do seu local favorito:</p>
-        <input 
-          type="image" 
-          id="local-favorito" 
-          name="local-favorito" 
-          src="images/upload.png" 
-          alt="Carregar foto" 
-          style="max-width: 80px;"
-        >
-
-        <p>Fala um pouco da tua experiência:</p>
-        <textarea 
-          id="experiencia" 
-          name="experiencia" 
-          placeholder="Descreve a tua vivência por aqui" 
-          required 
-          rows="4" 
-          cols="50"
-        ></textarea>
-
-        <p>Atividade favorita na região:</p>
-        <input 
-          list="atividades" 
-          id="atividade" 
-          name="atividade" 
-          placeholder="Escolhe uma..."
-          required
-        >
-        <datalist id="atividades">
-          <option value="Caminhada">
-          <option value="Visita ao Museu">
-          <option value="Degustação de vinhos">
-        </datalist>
-
-        <input type="reset" value="Reset">
-        <input type="submit" value="Send">
-      </fieldset>
-    </form>
-  </main>
-
-  <footer>
-    <p>DIW 2024</p>
-  </footer>
-
-  <!-- Exemplo de 'form' para um input fora do form principal -->
-  <input 
-    type="hidden" 
-    name="extraInfo" 
-    value="valorOculto" 
-    form="quizForm"
-  >
+                <p>Em que ano foi fundada a vila?</p>
+                <input type="date" id="fundacao" name="fundacao" required>
+        
+                <p>Horário do Mercado Municipal?</p>
+                <input type="time" id="horario-mercado" name="horario-mercado" required>
+        
+                <p>Qual a cor oficial da vila?</p>
+                <input type="color" id="cor-oficial" name="cor-oficial" required>
+        
+                <p>Quantos distritos tem Ponte de Lima?</p>
+                <input 
+                    type="number" 
+                    id="distritos" 
+                    name="distritos" 
+                    value="1" 
+                    required 
+                    min="1" 
+                    max="10" 
+                    step="1"
+                >
+        
+                <p>Numera a tua apreciação de Ponte de Lima numa escala de 1 a 10:</p>
+                <input 
+                    type="range" 
+                    id="qualidade-vida" 
+                    name="qualidade-vida" 
+                    required
+                    min="1" 
+                    max="10" 
+                    step="1" 
+                    value="5"
+                >
+        
+                <p>Descreve brevemente a tua experiência em Ponte de Lima:</p>
+                <textarea 
+                    id="experiencia" 
+                    name="experiencia" 
+                    placeholder="Conta-nos a tua vivência aqui!" 
+                    required 
+                    rows="4" 
+                    cols="50"
+                ></textarea>
+        
+                <p>Atividade favorita na região:</p>
+                <input 
+                    list="atividades" 
+                    id="atividade" 
+                    name="atividade" 
+                    placeholder="Escolhe uma..." 
+                    required
+                >
+                <datalist id="atividades">
+                    <option value="Caminhada">
+                    <option value="Visita ao Museu">
+                    <option value="Degustação de vinhos">
+                </datalist>
+            </fieldset>
+        
+            <!-- Avaliação e envio -->
+            <fieldset>
+                <legend>Avaliação e Envio</legend>
+        
+                <label for="date">Data de Resposta:</label>
+                <input type="date" id="date" name="date" required>
+        
+                <label for="time">Hora de Resposta:</label>
+                <input type="time" id="time" name="time" required>
+    
+            </fieldset>
+        
+            <fieldset>
+                <input type="reset" value="Reiniciar Formulário">
+                <input type="submit" value="Enviar Respostas">
+            </fieldset>
+        </form>
+        
 </body>
+<footer>
+    <p>Jéssica Sofia | Universidade Lusófona | DIW 2024 | Ponte de Lima</p>
+</footer>
 </html>

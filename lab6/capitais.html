@@ -1,95 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
+  <link rel="stylesheet" href="capitais.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Capitais</title>
-  <link rel="stylesheet" href="styles-capitais.css">
+    <link rel="icon" href="images/iconPL.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles-capitais.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <h1>Capitais</h1>
     <nav>
       <a href="#poema">Poema</a>
       <a href="#paisagem">Paisagem</a>
-      <a href="#cidades">Cidades</a>
-      <a href="index.html">A minha cidade</a>
+      <a href="#capitais">Capitais</a>
+      <a href="/lab6/index.html">A minha cidade</a>
     </nav>
   </header>
-
-  <!-- Poema -->
-  <article id="poema">
-    <div>
-      <p>
-        "Viajar! Perder países!<br>
+  <main>
+    <article class="animacao">
+      <div class="sapo">
+        <img src="images/sapo_redondo.jpeg">  
+      </div>
+    </article>
+    <article id="poema">
+      <p class="poema">Viajar! Perder países!<br>
         Ser outro constantemente,<br>
         Por a alma não ter raízes<br>
-        De viver de ver somente!"<br>
-      </p>
-      <p class="poeta">- Fernando Pessoa</p>
-    </div>
-  </article>
+        De viver de ver somente!</p>
+      <p class="autor">Fernando Pessoa</p>
+    </article>
+    <article id="paisagem">
+      <img src="images/noite_PL.jpeg" alt="Noite em Ponte de Lima">
+      <a href="https://pixabay.com/photos/mountains-meadow-alpine-meadow-fall-8451480/" target="_blank">©
+        Pixabay</a>
+    </article>
+    <article id="capitais">
+      <section>
+        <img src="images/lisboa.avif" alt="Lisboa">
+        <div>Lisboa</div>
+      </section>
 
-  <!-- Paisagem -->
-  <article id="paisagem">
-    <div class="imagem-container">
-      <img src="images/paisagem ponte de lima.jpg" alt="Ponte de Lima - Rio Lima">
-      <p class="fotografo">
-        Foto por <a href="https://pixabay.com/users/vjgalaxy-11493631/" target="_blank">vjgalaxy</a>
-      </p>
-    </div>
-  </article>
+      <section>
+        <img src="images/milao.avif" alt="Milão">
+        <div>Milão</div>
+      </section>
 
-  <!-- Cidades -->
-  <article id="cidades">
-    <section>
-      <img src="images/lisboa.avif" alt="Lisboa">
-      <div>Lisboa</div>
-    </section>
-    <section>
-      <img src="images/milao.avif" alt="Milão">
-      <div>Milão</div>
-    </section>
-    <section>
-      <img src="images/londres.avif" alt="Londres">
-      <div>Londres</div>
-    </section>
-    <section>
-      <img src="images/praga.avif" alt="Praga">
-      <div>Praga</div>
-    </section>
-    <section>
-      <img src="images/roma.avif" alt="Roma">
-      <div>Roma</div>
-    </section>
-    <section>
-      <img src="images/varsovia.avif" alt="Varsóvia">
-      <div>Varsóvia</div>
-    </section>
-    <section>
-      <img src="images/reykiavik.avif" alt="Reykjavik">
-      <div>Reykjavik</div>
-    </section>
-    <section>
-      <img src="images/budapeste.avif" alt="Budapeste">
-      <div>Budapeste</div>
-    </section>
-    <section>
-      <img src="images/bruxelas.avif" alt="Bruxelas">
-      <div>Bruxelas</div>
-    </section>
-    <section>
-      <img src="images/viena.avif" alt="Viena">
-      <div>Viena</div>
-    </section>
-    <section>
-      <img src="images/toquio.avif" alt="Toquio">
-      <div>Toquio</div>
-    </section>
-    <section>
-      <img src="images/paris.avif" alt="Paris">
-      <div>Paris</div>
-    </section>
-  </article>
+      <section>
+        <img src="images/londres.avif" alt="Londres">
+        <div>Londres</div>
+      </section>
+
+      <section>
+        <img src="images/praga.avif" alt="Praga">
+        <div>Praga</div>
+      </section>
+
+      <section>
+        <img src="images/roma.avif" alt="Roma">
+        <div>Roma</div>
+      </section>
+
+      <section>
+        <img src="images/varsovia.avif" alt="Varsóvia">
+        <div>Varsóvia</div>
+      </section>
+
+      <section>
+        <img src="images/reykiavik.avif" alt="Reykjavik">
+        <div>Reykjavik</div>
+      </section>
+
+      <section>
+        <img src="images/budapeste.avif" alt="Budapeste">
+        <div>Budapeste</div>
+      </section>
+
+      <section>
+        <img src="images/bruxelas.avif" alt="Bruxelas">
+        <div>Bruxelas</div>
+      </section>
+
+      <section>
+        <img src="images/viena.avif" alt="Viena">
+        <div>Viena</div>
+      </section>
+
+      <section>
+        <img src="images/paris.avif" alt="Paris">
+        <div>Paris</div>
+      </section>
+
+      <section>
+        <img src="images/toquio.avif" alt="Tóquio">
+        <div>Tóquio</div>
+      </section>
+    </article>
+    <article>
+      <section id="experimenta">
+        <div class="circle-container">
+          <div class="circle">BOM</div>
+          <div class="circle">DIA</div>
+        </div>
+        <div class="hover-container">
+          <p class="show-on-hover">Passa o rato aqui</p>
+          <p class="hidden-text">Foge, há um gato!</p>
+        </div>
+
+        <div class="icons">
+          <i class='fab fa-apple'></i>
+          <i class='fas fa-atom'></i>
+          <i class='fas fa-baby'></i>
+        </div>
+      </section>
+    </article>
+    <article class="Parallax">
+      <section class="parallax-content">
+        <p>Tóquio, capital do Japão</p>
+      </section>
+    </article>
+    <article class="video">
+      <video autoplay loop muted playsinline>
+        <source src="videos/chuva.mp4" type="video/mp4">
+      </video>
+    </article>
+    <article class="galeria-londres">
+      <section>
+        <div class="galeria-item">
+          <img src="images/sushi.jpeg" alt="Sushi">
+          <p>Sushi</p>
+        </div>
+        <div class="galeria-item-efeito">
+          <img src="images/sushi.jpeg" alt="Sushi em espelho">
+          <p>Sushi em espelho</p>
+        </div>
+        <div class="galeria-item-transicao">
+          <img src="images/sushi.jpeg" alt="Sushi inclinada">
+          <p>Sushi inclinado</p>
+        </div>
+      </section>
+      <section>
+        <div class="galeria-item">
+          <img src="images/sakura.jpeg" alt="Sakura">
+          <p>Sakura</p>
+        </div>
+        <div class="galeria-item-efeito">
+          <img src="images/sakura.jpeg" alt="Sakura em espelho">
+          <p>Sakura em espelho</p>
+        </div>
+        <div class="galeria-item-transicao">
+          <img src="images/sakura.jpeg" alt="Sakura inclinada">
+          <p>Sakura inclinada</p>
+        </div>
+      </section>
+      <section>
+        <div class="galeria-item">
+          <img src="images/templo.jpeg" alt="Templo">
+          <p>Templo</p>
+        </div>
+        <div class="galeria-item-efeito">
+          <img src="images/templo.jpeg" alt="Templo em espelho">
+          <p>Templo em espelho</p>
+        </div>
+        <div class="galeria-item-transicao">
+          <img src="images/templo.jpeg" alt="Templo inclinado">
+          <p>Templo inclinado</p>
+        </div>
+      </section>
+    
+    </article>
+  </main>
+  <footer>
+    <p>Jéssica Sofia | Universidade Lusófona | DIW 2024 </p>
+  </footer>
 </body>
+
 </html>
