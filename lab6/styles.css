@@ -3,22 +3,89 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Cormorant Garamond', serif; /* Fonte global */
+  font-family: Arial, sans-serif; /* Fonte padrão */
 }
 
+/* Corpo geral */
+body {
+  font-family: 'Cormorant Garamond', serif; /* Harmonizando com capitais */
+  background-color: #f7f7f7; /* Fundo claro */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #61992d; /* Verde padrão */
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+/* Navegação principal */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0;
+  background-color: #e3e6d7;
+  border-bottom: 2px solid #61992d;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3b5323;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #91b86d; /* Hover verde claro */
+  color: white;
+}
+
+nav a:active {
+  background-color: #61992d;
+  color: white;
+}
+
+nav a:last-child {
+  background-color: #91b86d;
+  color: white;
+  border-radius: 10px;
+}
+
+nav a:last-child:hover {
+  background-color: #61992d;
+}
+
+/* Container principal */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Seções */
 .section {
   margin-bottom: 20px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: white;
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .section h2 {
@@ -26,145 +93,60 @@
   margin-bottom: 10px;
 }
 
-/* Navegação no topo */
-nav {
-  grid-area: nav;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px 0;
-  background-color: #e3e6d7;
-  border-bottom: 2px solid #61992d;
-  position: sticky; /* Mantém o nav no topo ao rolar */
-  top: 0; /* Garante que fica no topo */
-  z-index: 1000; /* Coloca o nav acima de outros elementos */
+/* Aside esquerdo e direito */
+.aside-left,
+.aside-right {
+  padding: 20px;
+  background-color: #d4e1c7; /* Verde suave */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Links no menu */
-nav a {
-  text-decoration: none; /* Remove o sublinhado */
-  color: #3b5323; /* Verde escuro */
-  font-weight: bold; /* Negrito no texto */
-  padding: 5px 10px; /* Espaçamento interno */
-  border-radius: 5px; /* Cantos arredondados */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+.aside-left h3,
+.aside-right h3 {
+  color: #3b5323;
 }
 
-/* Efeitos de hover e visited */
-nav a:hover {
-  background-color: #91b86d; /* Fundo verde claro */
-  color: white; /* Texto branco */
+.aside-left p,
+.aside-right p {
+  text-align: justify;
 }
 
-nav a:visited {
-  color: #4b6f3e; /* Verde mais escuro */
-}
-
-
-/* Estilos para tabelas */
+/* Tabelas */
 table {
-  width: 100%; /* Faz a tabela ocupar toda a largura disponível */
-  border-collapse: collapse; /* Remove espaços entre as bordas */
-  margin-top: 20px; /* Espaçamento superior */
-  background-color: #fff; /* Fundo branco */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-  padding: 10px; /* Espaçamento interno */
-  text-align: left; /* Alinha o texto à esquerda */
-  border: 1px solid #ccc; /* Borda leve e uniforme */
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
 }
 
 th {
-  background-color: #e3e6d7; /* Fundo do cabeçalho */
-  color: #3b5323; /* Cor do texto do cabeçalho */
-  font-weight: bold;
+  background-color: #e3e6d7;
+  color: #3b5323;
 }
 
 td {
-  color: #333; /* Cor do texto */
-}
-
-table a {
-  color: #61992d; /* Cor dos links dentro da tabela */
-  text-decoration: none; /* Remove sublinhado */
-}
-
-table a:hover {
-  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-}
-
-/* Corpo geral */
-body {
-  display: grid;
-  grid-template-areas: 
-    "header"
-    "nav"
-    "main"
-    "aside-left"
-    "aside-right"
-    "footer";
-  grid-template-rows: auto auto 1fr auto auto auto;
-  grid-template-columns: 1fr;
-  min-height: 100vh;
-  line-height: 1.6;
   color: #333;
-  background-color: #f7f7f7;
 }
 
-/* Cabeçalho e Rodapé */
-header {
-  grid-area: header;
-  background-color: #61992d; 
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
+/* Rodapé */
 footer {
-  grid-area: footer;
-  background-color: #61992d;
-  color: #fff;
   text-align: center;
   padding: 10px;
+  background-color: #61992d; /* Verde padrão */
+  color: white;
+  margin-top: 20px;
 }
 
-header h1,
-footer p {
-  margin: 0;
-}
-
-/* Ajuste do conteúdo principal para evitar sobreposição */
+/* Conteúdo principal */
 main {
-  margin-right: 220px; /* Espaço para o navegador no lado direito */
-  padding: 20px;
-}
-
-/* Responsividade para dispositivos pequenos */
-@media (max-width: 767px) {
-  .vertical-nav {
-    position: static; /* Remove o comportamento fixo */
-    width: 100%; /* Ocupa toda a largura */
-    height: auto; /* Ajusta a altura automaticamente */
-    flex-direction: row; /* Alinha os links horizontalmente */
-    justify-content: center; /* Centraliza os links */
-    box-shadow: none; /* Remove a sombra */
-  }
-
-  .vertical-nav a {
-    margin: 0 10px; /* Espaço horizontal entre os links */
-    padding: 10px;
-  }
-
-  main {
-    margin-right: 0; /* Remove o espaçamento lateral */
-  }
-}
-
-/* Conteúdo Principal */
-main {
-  grid-area: main;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -173,109 +155,16 @@ main {
 
 .content h2 {
   text-align: center;
-  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 .content img {
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto;
   max-width: 100%;
   border-radius: 5px;
 }
 
 .content p {
   text-align: justify;
-}
-
-/* Asides */
-.aside-left,
-.aside-right {
-  padding: 20px;
-  background-color: #d4e1c7;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.aside-left {
-  grid-area: aside-left;
-}
-
-.aside-right {
-  grid-area: aside-right;
-}
-
-.aside-left p,
-.aside-right p {
-  text-align: justify;
-}
-
-
-
-/* Certifica-te de que o main é corretamente alinhado */
-body.pontos-de-interesse main {
-  grid-area: main;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Certifica-te de que o layout é ajustado para 1 coluna */
-body.pontos-de-interesse {
-  display: grid;
-  grid-template-areas: 
-    "header"
-    "nav"
-    "main"
-    "footer";
-  grid-template-rows: auto auto 1fr auto;
-  grid-template-columns: 1fr;
-}
-
-
-
-/* Media Queries */
-/* Layout de 1 coluna para mobile */
-@media (max-width: 767px) {
-  body {
-    grid-template-areas: 
-      "header"
-      "nav"
-      "main"
-      "footer";
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-columns: 1fr;
-  }
-
-  .aside-left,
-  .aside-right {
-    display: none; /* Esconde laterais no mobile */
-  }
-}
-
-/* Layout de 2 colunas para tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
-  body {
-    grid-template-areas: 
-      "header header"
-      "nav nav"
-      "aside-left main"
-      "footer footer";
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto auto 1fr auto;
-  }
-}
-
-/* Layout de 3 colunas para desktops */
-@media (min-width: 1024px) {
-  body {
-    grid-template-areas: 
-      "header header header"
-      "nav nav nav"
-      "aside-left main aside-right"
-      "footer footer footer";
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: auto auto 1fr auto;
-  }
 }
