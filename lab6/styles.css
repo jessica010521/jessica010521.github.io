@@ -194,130 +194,45 @@ main {
   text-align: justify;
 }
 
-/* Página Capitais */
-body.capitais {
-  display: flex;
-  flex-direction: column; /* Empilha os elementos verticalmente */
-  align-items: center;
-  background-color: #f7f7f7;
-}
-
-/* Cabeçalho consistente */
-body.capitais header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  background-color: #61992d;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para o poema */
-body.capitais #poema {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #d4e1c7;
-  text-align: center;
-}
-
-body.capitais #poema p {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-body.capitais #poema .poeta {
-  font-style: italic;
-  font-weight: normal;
-  color: #3b5323;
-}
-
-/* Estilo para a paisagem */
-body.capitais #paisagem {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #4b6f3e;
-}
-
-body.capitais #paisagem img {
-  width: 100%;
-}
-
-body.capitais #paisagem .fotografo {
-  align-self: flex-end;
-  margin: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-body.capitais #paisagem .fotografo a {
-  color: #91b86d;
-  text-decoration: none;
-}
-
-body.capitais #paisagem .fotografo a:hover {
-  text-decoration: underline;
-}
-
-/* Capitais em grid */
-body.capitais #cidades {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  background-color: #f0f3ec;
-}
-
-body.capitais #cidades section {
-  background-color: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-body.capitais #cidades section img {
-  width: 100%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-body.capitais #cidades section div {
-  padding: 10px 0;
-  font-size: 1rem;
-  background-color: #fff;
-  color: #333;
-}
-
-/* Estilo específico para Pontos de Interesse */
+/* Remover margin-bottom no menu */
 body.pontos-de-interesse nav {
-  margin-bottom: 20px; /* Espaçamento entre o menu e o conteúdo */
+  margin-bottom: 0; /* Remove qualquer espaçamento desnecessário */
 }
 
-body.pontos-de-interesse .section {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Remove margin do nav no contexto da página */
+body.pontos-de-interesse nav {
+  grid-area: nav;
+  margin: 0; /* Remove qualquer margem que esteja a empurrar o nav */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0;
+  background-color: #e3e6d7;
+  border-bottom: 2px solid #61992d;
+}
+
+/* Certifica-te de que o main é corretamente alinhado */
+body.pontos-de-interesse main {
+  grid-area: main;
   padding: 20px;
-  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-body.pontos-de-interesse .section h2 {
-  font-size: 1.5rem;
-  color: #556b2f;
-  margin-bottom: 10px;
+/* Certifica-te de que o layout é ajustado para 1 coluna */
+body.pontos-de-interesse {
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr;
 }
+
+
 
 /* Media Queries */
 /* Layout de 1 coluna para mobile */
