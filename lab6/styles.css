@@ -71,6 +71,56 @@ nav a:last-child:hover {
   background-color: #61992d;
 }
 
+/* Dropdown (para dispositivos móveis) */
+.dropdown {
+  display: none; /* Oculto por padrão */
+  position: relative;
+}
+
+.dropdown button {
+  background-color: #61992d; /* Verde padrão */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  background-color: #91b86d; /* Verde claro */
+}
+
+.dropdown-content {
+  display: none; /* Oculto por padrão */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #e3e6d7; /* Fundo claro */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #3b5323; /* Verde escuro */
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #91b86d; /* Verde claro */
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* Container principal */
 .container {
   max-width: 1200px;
@@ -93,7 +143,7 @@ nav a:last-child:hover {
   margin-bottom: 10px;
 }
 
-/* Aside esquerdo e direito */
+/* Asides esquerdo e direito */
 .aside-left,
 .aside-right {
   padding: 20px;
@@ -169,107 +219,7 @@ main {
   text-align: justify;
 }
 
-/* Estilos do menu dropdown */
-.dropdown {
-  display: none;
-  position: relative;
-}
-
-.dropdown button {
-  background-color: #61992d; /* Verde padrão */
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.dropdown button:hover {
-  background-color: #91b86d; /* Verde claro */
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #e3e6d7; /* Fundo claro */
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.dropdown-content a {
-  display: block;
-  color: #3b5323; /* Verde escuro */
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #91b86d; /* Verde claro */
-  color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Estilos do menu dropdown */
-.dropdown {
-  display: none;
-  position: relative;
-}
-
-.dropdown button {
-  background-color: #61992d; /* Verde padrão */
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.dropdown button:hover {
-  background-color: #91b86d; /* Verde claro */
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #e3e6d7; /* Fundo claro */
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.dropdown-content a {
-  display: block;
-  color: #3b5323; /* Verde escuro */
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #91b86d; /* Verde claro */
-  color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Media query para transformar o menu */
+/* Media query para menu dropdown em dispositivos móveis */
 @media (max-width: 768px) {
   nav {
     display: none; /* Esconde o menu horizontal */
