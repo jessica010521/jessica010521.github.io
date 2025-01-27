@@ -329,7 +329,7 @@ p, h1, h2, h3, h4 {
 /* Parallax Section */
 #parallax-section {
   position: relative;
-  background-image: url('images/parallax-image.jpg'); /* Substituir pelo nome da tua imagem */
+  background-image: url('images/folhas.jpeg'); /* Substituir pelo nome da tua imagem */
   background-attachment: fixed; /* Efeito de parallax */
   background-position: center;
   background-repeat: no-repeat;

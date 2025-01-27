@@ -3,229 +3,269 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif; /* Fonte padrão */
 }
 
-/* Corpo geral */
 body {
-  font-family: 'Cormorant Garamond', serif; /* Harmonizando com capitais */
-  background-color: #f7f7f7; /* Fundo claro */
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7; /* Fundo ajustado */
   color: #333;
   line-height: 1.6;
 }
 
-/* Cabeçalho */
 header {
+  position: sticky;
+  top: 0;
+  background-color: #61992d; /* Verde harmonizado */
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background-color: #61992d; /* Verde padrão */
-  color: white;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 header h1 {
-  font-size: 1.8rem;
+  margin-left: 20px;
 }
 
-/* Navegação principal */
 nav {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px 0;
-  background-color: #e3e6d7;
-  border-bottom: 2px solid #61992d;
 }
 
 nav a {
+  color: white;
+  padding: 20px;
   text-decoration: none;
-  color: #3b5323;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 5px;
+  text-transform: uppercase;
   transition: background-color 0.3s, color 0.3s;
 }
 
-nav a:hover {
-  background-color: #91b86d; /* Hover verde claro */
+nav a:last-child {
+  background-color: #91b86d; /* Cor ajustada */
+  border-radius: 10px;
+}
+
+nav a:link {
   color: white;
+}
+
+nav a:visited {
+  color: #4b6f3e; /* Verde escuro */
+}
+
+nav a:hover {
+  background-color: #61992d; /* Verde escuro */
+  color: #ffffff;
+  border-radius: 6px;
 }
 
 nav a:active {
-  background-color: #61992d;
-  color: white;
+  color: #bfff80; /* Tom de amarelo claro */
 }
 
-nav a:last-child {
-  background-color: #91b86d;
-  color: white;
-  border-radius: 10px;
-}
-
-nav a:last-child:hover {
-  background-color: #61992d;
-}
-
-/* Dropdown (para dispositivos móveis) */
-.dropdown {
-  display: none; /* Oculto por padrão */
-  position: relative;
-}
-
-.dropdown button {
-  background-color: #61992d; /* Verde padrão */
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.dropdown button:hover {
-  background-color: #91b86d; /* Verde claro */
-}
-
-.dropdown-content {
-  display: none; /* Oculto por padrão */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #e3e6d7; /* Fundo claro */
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.dropdown-content a {
-  display: block;
-  color: #3b5323; /* Verde escuro */
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #91b86d; /* Verde claro */
-  color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Container principal */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Seções */
-.section {
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.section h2 {
-  color: #3b5323;
-  margin-bottom: 10px;
-}
-
-/* Asides esquerdo e direito */
-.aside-left,
-.aside-right {
-  padding: 20px;
-  background-color: #d4e1c7; /* Verde suave */
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.aside-left h3,
-.aside-right h3 {
-  color: #3b5323;
-}
-
-.aside-left p,
-.aside-right p {
-  text-align: justify;
-}
-
-/* Tabelas */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-th, td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-
-th {
-  background-color: #e3e6d7;
-  color: #3b5323;
-}
-
-td {
-  color: #333;
-}
-
-/* Rodapé */
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #61992d; /* Verde padrão */
+  background-color: #333; /* Cinza escuro */
   color: white;
   margin-top: 20px;
 }
 
-/* Conteúdo principal */
-main {
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+footer p {
+  font-size: 0.9rem;
 }
 
-.content h2 {
+/* Poema */
+#poema {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; 
+  background-color: #d4e1c7; /* Verde claro */
+}
+
+#poema div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.content img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+#poema p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#poema p:first-child {
+  font-weight: bold;
+}
+
+#poema p:last-child {
+  font-style: italic;
+}
+
+/* Paisagem */
+#paisagem {
+  height: auto;
+  margin: 0;
+}
+
+.imagem-container {
+  width: 100%; 
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.imagem-container img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0; 
+}
+
+.fotografo {
+  position: absolute;
+  bottom: 0;  
+  right: 0;  
+  color: white; 
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 5px;
   border-radius: 5px;
 }
 
-.content p {
-  text-align: justify;
+.fotografo a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Media query para menu dropdown em dispositivos móveis */
+.fotografo a:hover {
+  text-decoration: underline;
+}
+
+/* Cidades */
+#cidades {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f3ec; /* Fundo ajustado */
+}
+
+#cidades section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+#cidades img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px 0 10px 0; 
+}
+
+/* Experimentos */
+#experimenta {
+  padding: 20px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.circle-container {
+  display: flex;
+  gap: 20px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: #91b86d; /* Verde claro */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; 
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.hidden-container {
+  text-align: center;
+}
+
+.trigger {
+  background-color: #61992d; /* Verde escuro */
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.hidden-content {
+  display: none;
+  margin-top: 10px;
+  background-color: #eaeaea;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.trigger:hover + .hidden-content {
+  display: block; 
+}
+
+/* Parallax Section */
+#parallax-section {
+  position: relative;
+  background-image: url('images/folhas.jpeg'); /* Substituir pelo nome da tua imagem */
+  background-attachment: fixed; /* Efeito de parallax */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px; /* Altura do parallax */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#parallax-section .parallax-content {
+  position: relative;
+  z-index: 2; /* Garante que o texto está acima da imagem */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  border-radius: 10px;
+}
+
+#parallax-section .parallax-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#parallax-section .parallax-content p {
+  font-size: 1.2rem;
+}
+
 @media (max-width: 768px) {
-  nav {
-    display: none; /* Esconde o menu horizontal */
+  #parallax-section {
+    background-attachment: scroll; /* Remove o efeito de parallax */
   }
 
-  .dropdown {
-    display: block; /* Mostra o dropdown */
+  #parallax-section .parallax-content h2 {
+    font-size: 1.5rem;
+  }
+
+  #parallax-section .parallax-content p {
+    font-size: 1rem;
   }
 }
