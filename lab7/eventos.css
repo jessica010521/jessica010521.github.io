@@ -1,0 +1,98 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7d8e3; /* Rosa claro */
+    color: #4a154b; /* Roxo escuro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Para ocupar 100% da altura */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #b8006b; /* Rosa forte */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Seções */
+main {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #7d217c; /* Roxo vibrante */
+}
+
+/* Área de interação com o rato */
+#mouse-area {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #4a154b; /* Roxo escuro */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o texto */
+    justify-content: center; /* Centraliza horizontalmente o texto */
+    background-color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+/* Botões */
+button {
+    background-color: #7d217c; /* Roxo vibrante */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #56124f; /* Roxo mais escuro */
+    transform: scale(1.05);
+}
+
+/* Inputs */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #4a154b;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 80%;
+    max-width: 300px;
+}
+
+/* Mensagem interativa */
+#mensagem-interativa {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #4a154b;
+    transition: color 0.3s, font-size 0.3s;
+}
+
+/* Botão voltar */
+#voltar button {
+    background-color: #e94b8a; /* Rosa escuro */
+}
+
+#voltar button:hover {
+    background-color: #b8006b; /* Rosa mais forte */
+}

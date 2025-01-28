@@ -1,30 +1,22 @@
-// 1. Mensagem de agradecimento ao passar o mouse (usando arrow functions)
+// 1. Mensagem de agradecimento ao passar o mouse
 const hoverMessage = document.getElementById("hoverMessage");
-
 hoverMessage.addEventListener("mouseenter", () => {
-    hoverMessage.innerText = "1. Obrigada por passares";
+    hoverMessage.innerText = "Obrigada por passares";
 });
-
 hoverMessage.addEventListener("mouseleave", () => {
-    hoverMessage.innerText = "1. Passa por aqui";
+    hoverMessage.innerText = "Passa por aqui";
 });
 
 // 2. Mudança de cor da frase "Pinta-me"
-document.querySelectorAll("button[data-color]").forEach((button) => {
-    button.addEventListener("click", () => {
-        const color = button.dataset.color; // Acessa a cor a partir do data-color
-        document.getElementById("paintMe").style.color = color; // Aplica a cor ao texto "Pinta-me"
-    });
-});
+function changeColor(color) {
+    const paintMe = document.getElementById("paintMe");
+    paintMe.style.color = color;
+}
 
-// 3. Alteração de cor da caixa de texto enquanto digita (somente ao inserir algo)
+// 3. Alteração de cor da caixa de texto enquanto digita
 const typeBox = document.getElementById("typeBox");
 typeBox.addEventListener("input", () => {
-    if (typeBox.value) {
-        typeBox.style.backgroundColor = getRandomColor();
-    } else {
-        typeBox.style.backgroundColor = ""; // Remove a cor se a caixa estiver vazia
-    }
+    typeBox.style.backgroundColor = getRandomColor();
 });
 
 function getRandomColor() {
@@ -36,49 +28,15 @@ function getRandomColor() {
     return color;
 }
 
-// 4. Alteração do fundo com base na seleção do dropdown
-function changeBackgroundColor(selectElement) {
-    document.body.style.backgroundColor = selectElement.value; // Usa o valor selecionado
+// 4. Alteração do fundo com base na cor escrita
+function changeBackgroundColor() {
+    const colorInput = document.getElementById("colorInput").value;
+    document.body.style.backgroundColor = colorInput;
 }
 
 // 5. Contador que incrementa ao clicar
 let count = 0;
-
-function loadCount() {
-    const savedCount = localStorage.getItem("counterValue");
-    count = savedCount ? parseInt(savedCount) : 0;
-    document.getElementById("countDisplay").innerText = count;
-}
-
 function incrementCount() {
     count++;
     document.getElementById("countDisplay").innerText = count;
-    localStorage.setItem("counterValue", count);
 }
-
-// 6. Exibir mensagem com nome e idade
-function displayGreeting() {
-    const name = document.getElementById("nameInput").value;
-    const age = document.getElementById("ageInput").value;
-    const greetingMessage = document.getElementById("greetingMessage");
-    
-    if (name && age) {
-        greetingMessage.innerText = `6. Olá, ${name}, você tem ${age} anos!`;
-    } else {
-        greetingMessage.innerText = "6. Por favor, insira o seu nome e idade.";
-    }
-}
-
-// 7. Contador automático
-let autoCount = 0;
-const startAutoCounter = () => {
-    setInterval(() => {
-        autoCount++;
-        document.getElementById("autoCounter").innerText = autoCount;
-    }, 1000); // Intervalo de 1 segundo para o contador automático
-}
-
-// Iniciar o contador automático ao carregar a página
-window.onload = startAutoCounter;
-loadCount(); // Carrega o valor do contador do Local Storage
-startAutoCounter(); // Inicia o contador automático

@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<title>Jogo do Galo</title>
-
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> 
+    <title>Eventos</title>
+    <link rel="stylesheet" href="eventos.css">
+</head>
 <body>
-    <div id="nome-jogadores">
-        <input type="text" id="jogadorX" placeholder="Nome do jogador X">
-        <input type="text" id="jogadorO" placeholder="Nome do jogador O">
-        <label for="cor-casas">Escolha a cor das casas:</label>
-        <input type="color" id="cor-casas" value="#ffffff">
-        <button id="iniciar-jogo">Iniciar Jogo</button>
-    </div>
+    <header>
+        <h1>Bem-vindo aos Eventos Interativos</h1>
+    </header>
 
-    <div id="tabuleiro" style="display: none;">
-        <div class="casa"></div>
-        <div class="casa"></div>
-        <div class="casa"></div>
-        <div class="casa"></div>
-        <div class="casa"></div>
-        <div class="casa"></div>
-        <div class="casa"></div>
-        <div class="casa"></div>
-        <div class="casa"></div>
-    </div>
+    <main>
+        <section id="interacao">
+            <h2>Interações com o rato</h2>
+            <div id="mouse-area" style="width: 300px; height: 200px; border: 2px solid black;">
+                Passa o rato aqui!
+            </div>
+        </section>
 
-    <div id="controle" style="display: none;">
-        <div id="mensagem">Vez do jogador X</div>
-        <button id="reiniciar">Reiniciar Jogo</button>
-    </div>
+        <section id="teclado">
+            <h2>Interações com o teclado</h2>
+            <input type="text" id="input-teclado" placeholder="Escreve algo...">
+            <p id="teclado-output"></p>
+        </section>
 
-    <script src="script.js"></script> 
+        <section id="interativo">
+            <h2>Interação de Mensagem</h2>
+            <p id="mensagem-interativa">Clica no botão abaixo para uma mensagem surpresa!</p>
+            <button id="botao-interativo">Mostrar Mensagem</button>
+        </section>
+
+        <section id="voltar">
+            <button onclick="window.location.href='index.html'">Home</button>
+        </section>
+    </main>
+
+    <script src="eventos.js"></script>
 </body>
 </html>

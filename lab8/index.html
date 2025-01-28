@@ -7,47 +7,27 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <!-- 1. Passa por aqui -->
-    <h1 id="hoverMessage">1. Passa por aqui</h1>
+    <h1 id="hoverMessage">1.Passa por aqui!</h1>
     
-    <!-- 2. Pinta-me -->
-    <h2 id="paintMe">2. Pinta-me</h2>
-    <button data-color="red">Red</button>
-    <button data-color="blue">Blue</button>
-    <button data-color="green">Green</button>
+    <h2 id="paintMe">2.Pinta-me</h2>
+    <button onclick="changeColor('red')">Red</button>
+    <button onclick="changeColor('blue')">Blue</button>
+    <button onclick="changeColor('green')">Green</button>
 
-    <!-- 3. Experimenta escrever -->
-    <h2>3. Experimenta escrever</h2>
-    <input type="text" id="typeBox" placeholder="Escreve aqui...">
+    <h2>3.Experimenta escrever...</h2>
+    <input type="text" id="typeBox" placeholder="alguma coisa...">
 
-    <!-- 4. Escolha uma cor -->
-    <p><h2 style="display: inline;">4. Escolha uma cor</h2>
-    <select onchange="changeBackgroundColor(this)" style="display: inline;">
-        <option value="white">White</option>
-        <option value="red">Red</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-    </select>
-    </p>
+    <h2>4.Escreva uma cor em inglês</h2>
+    <input type="text" id="colorInput" placeholder="Escolha uma cor em inglês:">
+    <button onclick="changeBackgroundColor()">Submeter</button>
 
-    <!-- 5. Conta -->
-    <h2>5. Conta</h2>
+    <h2>5.Conta!</h2>
     <button onclick="incrementCount()">Conta</button>
     <span id="countDisplay">0</span>
 
-    <!-- 6. Insira nome e idade -->
-    <h2>6. Insira nome e idade</h2>
-    <input type="text" id="nameInput" placeholder="Insira o seu nome">
-    <input type="number" id="ageInput" placeholder="Insira a sua idade">
-    <button onclick="displayGreeting()">Submeter</button>
-    <p id="greetingMessage"></p>
-
-    <!-- 7. Automatic Counter -->
-    <h2>7. Automatic counter: <span id="autoCounterContainer"><span id="autoCounter">0</span></span></h2>
-
-
     <p>
-        <a href="/lab7/eventos.html">Jogo do Galo</a>
+        <a href="/lab7/jogo_galo.html">Jogo do Galo</a>
+        <a href="/lab7/eventos.html">Eventos de Teste</a>
     </p>
 </body>
 </html>
