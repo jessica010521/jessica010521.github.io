@@ -1,99 +1,132 @@
-/* Cabeçalho com estilos para alinhar loja à esquerda e navegação à direita */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e5e1e6;
+}
+
 header {
-    background-color: pink;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 0; 
-    width: 100%; 
-    z-index: 1000;
-    position: fixed;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Flex Container para Produtos e Cesto */
-  .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  /* Estilo dos Produtos */
-  article.product-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    width: 200px;
-  }
-  
-  .product-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .product-card h3 {
-    font-size: 1.1em;
-    margin: 10px 0;
-  }
-  
-  .product-card p {
-    margin: 5px 0;
-  }
-  
-  button.cart-button {
-    padding: 10px 15px;
-    background-color: pink;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button.cart-button:hover {
-    background-color: #ff66b2;
-  }
-  
-  /* Cesto */
-  #cart-container {
-    background-color: pink;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-  
-  /* Rodapé */
-  footer {
-    text-align: center;
-    padding: 10px;
-    color: #666;
-  }
-  
+  position: sticky;
+  top: 0;
+  background-color: purple;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+header h1 {
+  font-size: 1.8em;
+}
+
+/* Navegação */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+/* Main*/
+main {
+  padding: 20px;
+}
+
+/* Títulos das seções */
+#produtos h2,
+#cesto h2 {
+  text-align: center;   
+}
+
+/* grade dos produtos */
+.lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 10px;
+}
+
+/* Estilo para cada produto */
+.produto {
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título do produto */
+.produto h3 {  
+  text-align: center;
+}
+
+/* Imagem do produto */
+.produto img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+/* Preço */
+.produto .preco {
+  font-weight: bold;
+}
+
+/* Descrição */
+.produto .descricao {
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+/* Botão de adicionar ao cesto */
+.produto button {
+  border-radius: 5px;
+  margin-top: auto;
+}
+
+/* Estilo do cesto */
+#cesto {
+  padding: 20px;
+  background-color: purple;
+  margin-top: 20px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+#cesto .produto h3,
+#cesto .produto .preco{
+  color: black;
+}
+
+/* Botão de remover do cesto */
+.botao-remover {
+  border-radius: 5px;
+  margin-top: auto;
+}
+
+/* Custo total no cesto */
+#cesto .preco-total {
+  padding: 20px;
+  font-size: 1.5em;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: white;
+  color: black;  
+}
