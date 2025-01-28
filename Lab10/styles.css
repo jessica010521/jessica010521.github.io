@@ -1,130 +1,347 @@
-/* Estilo geral do corpo */
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #fff7e6; /* Laranja suave claro */
+  box-sizing: border-box;
 }
 
-/* Cabeçalho */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff7e6; /* Laranja claro */
+  padding-top: 80px;
+}
+
+/* Header */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   background-color: #ff8c42; /* Laranja vibrante */
   color: white;
+  padding: 20px; 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  justify-content: space-between;
 }
 
-header h1 {
-  font-size: 1.8em;
+header .logo {
+  display: flex;
+  align-items: center;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
+header .logo img {
+  width: auto; /* Mantém as proporções */
+  height: 60px; /* Define uma altura fixa */
+  max-width: 100%; /* Garante que não ultrapasse o tamanho do contêiner */
+  object-fit: contain; /* Ajusta a imagem dentro do espaço sem distorção */
+  margin-right: 20px;
 }
 
-nav ul {
+
+header .logo h1 {
+  text-align: center;
+}
+
+/* Nav do header */
+header nav ul {
   list-style: none;
   display: flex;
+  gap: 30px;
 }
 
-/* Estilo principal */
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
 main {
   padding: 20px;
 }
 
-h2 {
+/* Título produtos */
+#produtos h2 {
   text-align: center;
-  color: #e05e26; /* Tom de laranja escuro para os títulos */
+  padding: 30px;
+  color: #e05e26; /* Laranja escuro */
 }
 
-/* Lista de produtos */
+/* Menu de Filtros */
+.filtro-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.filtro-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.filtro-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.filtro-menu label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.filtro-menu select,
+.filtro-menu input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ff8c42; /* Laranja vibrante */
+}
+
+/* Lista de Produtos */
 .lista-produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  justify-items: center;
-  padding: 10px;
 }
 
-/* Estilo para cada produto */
+/* Produto */
 .produto {
-  border-radius: 8px;
+  background-color: white;
   padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.produto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+.produto h3 {  
+  text-align: center;
+  margin-bottom: 15px;
+  color: #e05e26; /* Laranja escuro */
 }
 
 .produto img {
   width: 100%;
-  height: auto;
-  max-height: 200px;
+  height: 180px;
   object-fit: contain;
+  margin-bottom: 15px;
 }
 
-.produto h3 {
-  color: #e05e26; /* Título do produto em laranja escuro */
+.produto .preco {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff8c42; /* Laranja vibrante */
 }
 
+.produto .descricao {
+  background-color: #ffe6cc; /* Laranja muito claro */
+  padding: 10px;
+  border-radius: 5px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.produto .rating {
+  margin-bottom: 10px;
+}
+
+/* Botão de adicionar ao cesto */
 .produto button {
-  background-color: #ff8c42; /* Botão com laranja vibrante */
+  margin-top: auto;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  background-color: #ff8c42; /* Laranja vibrante */
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
 }
 
 .produto button:hover {
-  background-color: #e05e26; /* Tom mais escuro para hover */
+  background-color: #e05e26; /* Laranja escuro */
 }
 
-/* Carrinho */
-#carrinho {
-  background-color: #fff7e6; /* Fundo do cesto com o mesmo laranja claro */
+/* Estilo do Cesto */
+#cesto {
+  background-color: #ff8c42; /* Laranja vibrante */
+  color: white;
   padding: 20px;
+  box-sizing: border-box;
   margin-top: 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; 
 }
 
-#carrinho h2 {
-  color: #e05e26;
+/* Título da Seção do Cesto */
+#cesto h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: white;
 }
 
-#carrinho-container {
+/* Lista de Produtos no Cesto */
+#cesto .lista-produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  justify-items: center;
 }
 
-/* Custo total no cesto */
-#custo-total {
+/* Ajustes nos Produtos do Cesto */
+#cesto .produto h3,
+#cesto .produto .preco,
+#cesto .produto .rating {
+  color: black;
+}
+
+#cesto .produto .descricao {
+  display: none;
+}
+
+#cesto .preco-total {
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 20px; 
+  color: white;
+}
+
+/* Seção Total e Cupons */
+#cesto .total-cupons {
+  background-color: #ffe6cc; /* Laranja muito claro */
+  color: black;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center; 
+}
+
+#cesto .total-cupons button {
+  background-color: #e05e26; /* Laranja escuro */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin: 20px auto;
+  display: block; 
+}
+
+/* mensagem após compra */
+#mensagem-compra {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 15px;
+  color: #e05e26; /* Laranja escuro */
+}
+
+#cesto .estudante-deisi label,
+#cesto .cupom-desconto label {
+  margin-right: 10px;
+  color: black;
+}
+
+#cesto .cupom-desconto input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ff8c42; /* Laranja vibrante */
+}
+
+#cesto .estudante-deisi input[type="checkbox"] {
+  margin-left: 10px
+}
+
+/* Botão de remover do cesto */
+.botao-remover {
+  margin-top: auto;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  background-color: #e05e26; /* Laranja escuro */
+  color: white;
+  border: none;
+}
+
+.botao-remover:hover {
+  background-color: #ff8c42; /* Laranja vibrante */
+}
+
+/* Estilo do Checkout */
+#pagamento {
+  background-color: #ff8c42; /* Laranja vibrante */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+#pagamento h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#pagamento .preco-total {
   font-size: 1.5em;
   font-weight: bold;
-  color: #e05e26; /* Laranja escuro */
-  text-align: center;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#pagamento .opcoes-pagamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#pagamento .opcoes-pagamento label {
+  font-size: 1em;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#pagamento .opcoes-pagamento input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #ffe6cc; /* Laranja claro */
+  color: #333;
+}
+
+#pagamento .opcoes-pagamento input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#pagamento button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #e05e26; /* Laranja escuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#pagamento button:hover {
+  background-color: #ff8c42; /* Laranja vibrante */
 }
 
 
-/* Rodapé */
+/* Footer */
 footer {
+  width: 100%;
   text-align: center;
   padding: 15px;
-  background-color: #ff8c42; /* Cor de fundo do rodapé */
+  background-color: #e05e26; /* Laranja escuro */
   color: white;
+  position: relative;
+  bottom: 0;
 }
