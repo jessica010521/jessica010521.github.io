@@ -3,31 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interatividade com JavaScript</title>
+    <title>JavaScript Aprimorado</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
 </head>
 <body>
-    <h1 id="hoverMessage">1.Passa por aqui!</h1>
-    
-    <h2 id="paintMe">2.Pinta-me</h2>
-    <button onclick="changeColor('red')">Red</button>
-    <button onclick="changeColor('blue')">Blue</button>
-    <button onclick="changeColor('green')">Green</button>
+    <header>
+        <h1>JavaScript Aprimorado</h1>
+    </header>
 
-    <h2>3.Experimenta escrever...</h2>
-    <input type="text" id="typeBox" placeholder="alguma coisa...">
+    <main>
+        <section>
+            <h2>1. Passa por aqui!</h2>
+            <div id="hoverArea" class="interactive-area">Move o rato aqui!</div>
+        </section>
 
-    <h2>4.Escreva uma cor em inglês</h2>
-    <input type="text" id="colorInput" placeholder="Escolha uma cor em inglês:">
-    <button onclick="changeBackgroundColor()">Submeter</button>
+        <section>
+            <h2>2. Pinta-me</h2>
+            <div id="paintMe" class="interactive-area">Escolhe uma cor abaixo!</div>
+            <button data-color="red">Red</button>
+            <button data-color="blue">Blue</button>
+            <button data-color="green">Green</button>
+        </section>
+        
 
-    <h2>5.Conta!</h2>
-    <button onclick="incrementCount()">Conta</button>
-    <span id="countDisplay">0</span>
+        <section>
+            <h2>3. Experimenta escrever...</h2>
+            <input type="text" id="typeBox" placeholder="Escreve algo aqui...">
+            <p id="typeResult"></p>
+        </section>
 
-    <p>
-        <a href="/lab7/jogo_galo.html">Jogo do Galo</a>
-        <a href="/lab7/eventos.html">Eventos de Teste</a>
-    </p>
+        <section>
+            <h2>4. Escolha uma cor</h2>
+            <select id="colorInput" onchange="changeBackgroundColor(this)">
+                <option value="">-- Selecione uma cor --</option>
+                <option value="rosa">Rosa</option>
+                <option value="azul">Azul</option>
+                <option value="lavanda">Lavanda</option>
+            </select>
+        </section>
+        
+        <section>
+            <h2>5. Conta!</h2>
+            <button onclick="incrementCount()">Conta</button>
+            <span id="countDisplay">0</span>
+        </section>
+
+        <section>
+            <h2>6. Formulário de Submissão</h2>
+            <form id="userForm" onsubmit="handleFormSubmit(event)">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required><br>
+                <label for="age">Idade:</label>
+                <input type="number" id="age" name="age" placeholder="Digite sua idade" required><br>
+                <button type="submit">Submeter</button>
+            </form>
+            <p id="formResult"></p>
+        </section>
+        
+
+        <section>
+            <h2>7. Contador Automático</h2>
+            <p>O contador automático começou assim que entraste nesta página!</p>
+            <span id="autoCounter">0</span>
+        </section>
+    </main>
 </body>
 </html>
