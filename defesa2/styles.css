@@ -1,163 +1,348 @@
-/* Cabeçalho com estilos para alinhar loja à esquerda e navegação à direita */
-header {
-    background-color: pink;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 0; 
-    width: 100%; 
-    z-index: 1000;
-    position: fixed;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /* Seção de Filtros */
-#filter-section {
-  background-color: #ff66b2; /* Rosa mais escuro */
-  padding: 20px;
-  margin-top: 60px; /* Para dar espaço ao cabeçalho fixo */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(images/fundo_loja.png);
+  padding-top: 80px;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ff8c42; /* Laranja vibrante */
   color: white;
+  padding: 20px; 
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+header .logo {
+  display: flex;
   align-items: center;
 }
 
-#filter-section label {
-  margin-right: 10px;
-}
-
-#filter-section select,
-#filter-section input {
-  padding: 8px;
-  width: 200px;
-  border-radius: 5px;
-  border: none;
-}
-
-/* Ajuste de espaçamento entre os filtros */
-#filter-section label,
-#filter-section select,
-#filter-section input {
-  margin-bottom: 10px; /* Espaçamento inferior */
-}
-
-/* Para garantir que o conteúdo dentro da seção se alinhe bem */
-#filter-section > * {
-  margin-left: 10px;
+header .logo img {
+  width: auto; /* Mantém as proporções */
+  height: 60px; /* Define uma altura fixa */
+  max-width: 100%; /* Garante que não ultrapasse o tamanho do contêiner */
+  object-fit: contain; /* Ajusta a imagem dentro do espaço sem distorção */
+  margin-right: 20px;
 }
 
 
-  
-  /* Flex Container para Produtos e Cesto */
-  .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  /* Estilo dos Produtos */
-  article.product-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    width: 200px;
-  }
-  
-  .product-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .product-card h3 {
-    font-size: 1.1em;
-    margin: 10px 0;
-  }
-  
-  .product-card p {
-    margin: 5px 0;
-  }
-  
-  button.cart-button {
-    padding: 10px 15px;
-    background-color: pink;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button.cart-button:hover {
-    background-color: #ff66b2;
-  }
-  
-  /* Estilo em grid para o cesto */
-#cart-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  background-color: pink;
-  padding: 20px;
-  border-radius: 5px;
-  color: black; /* Texto visível */
-}
-
-#cart-container .product-card {
-  background-color: #ffffff; /* Fundo branco para contraste */
-  color: black; /* Texto preto */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
+header .logo h1 {
   text-align: center;
 }
 
-#cart-container img {
-  border-radius: 8px;
-  width: 100%; /* Ajusta a imagem ao container */
-  height: auto;
+/* Nav do header */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
-.cart-total {
-  text-align: right;
-  font-size: 1.2em;
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Título produtos */
+#produtos h2 {
+  text-align: center;
+  padding: 30px;
+  color: #ffffff; /* Laranja escuro */
+}
+
+/* Menu de Filtros */
+.filtro-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.filtro-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.filtro-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.filtro-menu label {
+  margin-right: 10px;
   font-weight: bold;
+}
+
+.filtro-menu select,
+.filtro-menu input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ff8c42; /* Laranja vibrante */
+}
+
+/* Lista de Produtos */
+.lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Produto */
+.produto {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.produto h3 {  
+  text-align: center;
+  margin-bottom: 15px;
+  color: #e05e26; /* Laranja escuro */
+}
+
+.produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.produto .preco {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff8c42; /* Laranja vibrante */
+}
+
+.produto .descricao {
+  background-color: #ffe6cc; /* Laranja muito claro */
+  padding: 10px;
+  border-radius: 5px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.produto .rating {
+  margin-bottom: 10px;
+}
+
+/* Botão de adicionar ao cesto */
+.produto button {
+  margin-top: auto;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  background-color: #ff8c42; /* Laranja vibrante */
+  color: white;
+  border: none;
+}
+
+.produto button:hover {
+  background-color: #e05e26; /* Laranja escuro */
+}
+
+/* Estilo do Cesto */
+#cesto {
+  background-color: #ff8c42; /* Laranja vibrante */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
   margin-top: 20px;
-  color: black; /* Garante que o texto é visível */
+  border-radius: 10px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; 
+}
+
+/* Título da Seção do Cesto */
+#cesto h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Lista de Produtos no Cesto */
+#cesto .lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Ajustes nos Produtos do Cesto */
+#cesto .produto h3,
+#cesto .produto .preco,
+#cesto .produto .rating {
+  color: black;
+}
+
+#cesto .produto .descricao {
+  display: none;
+}
+
+#cesto .preco-total {
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 20px; 
+  color: white;
+}
+
+/* Seção Total e Cupons */
+#cesto .total-cupons {
+  background-color: #ffe6cc; /* Laranja muito claro */
+  color: black;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center; 
+}
+
+#cesto .total-cupons button {
+  background-color: #e05e26; /* Laranja escuro */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin: 20px auto;
+  display: block; 
+}
+
+/* mensagem após compra */
+#mensagem-compra {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 15px;
+  color: #e05e26; /* Laranja escuro */
+}
+
+#cesto .estudante-deisi label,
+#cesto .cupom-desconto label {
+  margin-right: 10px;
+  color: black;
+}
+
+#cesto .cupom-desconto input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ff8c42; /* Laranja vibrante */
+}
+
+#cesto .estudante-deisi input[type="checkbox"] {
+  margin-left: 10px
+}
+
+/* Botão de remover do cesto */
+.botao-remover {
+  margin-top: auto;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  background-color: #e05e26; /* Laranja escuro */
+  color: white;
+  border: none;
+}
+
+.botao-remover:hover {
+  background-color: #ff8c42; /* Laranja vibrante */
+}
+
+/* Estilo do Checkout */
+#pagamento {
+  background-color: #ff8c42; /* Laranja vibrante */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+#pagamento h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#pagamento .preco-total {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#pagamento .opcoes-pagamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#pagamento .opcoes-pagamento label {
+  font-size: 1em;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#pagamento .opcoes-pagamento input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #ffe6cc; /* Laranja claro */
+  color: #333;
+}
+
+#pagamento .opcoes-pagamento input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#pagamento button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #e05e26; /* Laranja escuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#pagamento button:hover {
+  background-color: #ff8c42; /* Laranja vibrante */
 }
 
 
-  
-  /* Rodapé */
-  footer {
-    text-align: center;
-    padding: 10px;
-    color: #666;
-  }
-  
+/* Footer */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: #e05e26; /* Laranja escuro */
+  color: white;
+  position: relative;
+  bottom: 0;
+}

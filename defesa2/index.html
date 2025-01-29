@@ -1,70 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja DEISI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <header>
+        <div class="logo">
+            <img src="images/deisi_logotipo.png" alt="Logo DEISI">
+            <h1>Loja DEISI</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#cesto">Cesto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Cabeçalho -->
-  <header>
-    <h1>Loja</h1>
-    <nav>
-      <ul>
-        <li><a href="#products">Produtos</a></li>
-        <li><a href="#cart-container">Cesto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main>
+        <!-- Secção de Produtos -->
+        <section id="produtos">
+            <h2>Selecione seus produtos</h2>
+            <nav class="filtro-menu">
+                <ul>
+                    <li>
+                        <label for="filtro-categoria">Filtrar:</label>
+                        <select id="filtro-categoria">
+                            <option value="all">Todas as categorias</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="ordenar-preco">Ordenar:</label>
+                        <select id="ordenar-preco">
+                            <option value="none">Ordenar pelo preço</option>
+                            <option value="crescente">Preço Crescente</option>
+                            <option value="decrescente">Preço Decrescente</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="procurar-produto">Procurar:</label>
+                        <input type="text" id="procurar-produto" placeholder="pesquise por produto">
+                    </li>
+                </ul>
+            </nav>
+            <div class="lista-produtos">
+                <!-- Produtos serão carregados dinamicamente aqui -->
+            </div>
+        </section>
 
-  <!-- Seção de Filtros -->
-<section id="filter-section" class="filter-section">
-  <label for="category-filter">Categoria:</label>
-  <select id="category-filter">
-    <option value="">Todas</option>
-  </select>
+        <!-- Secção do Cesto -->
+        <section id="cesto">
+            <h2>Produtos Selecionados</h2>
+            <div class="lista-produtos">
+                <!-- Produtos no cesto serão carregados dinamicamente aqui -->
+            </div>
+            <article id="pagamento">
+                <h2>Resumo do Pagamento</h2>
+                <p class="preco-total">Custo total: 0.00 €</p>
+                <div class="opcoes-pagamento">
+                    <label>
+                        <input type="checkbox" id="desconto-estudante">
+                        És estudante do DEISI?
+                    </label>
+                    <label>
+                        Cupão de desconto:
+                        <input type="text" id="cupao-desconto" placeholder="Insira o seu cupão">
+                    </label>
+                </div>
+                <button id="btn-comprar">Comprar</button>
+                <p id="mensagem-compra"></p>
+            </article>
+        </section>
+    </main>
 
-  <label for="price-filter">Ordenar por preço:</label>
-  <select id="price-filter">
-    <option value="asc">Menor para Maior</option>
-    <option value="desc">Maior para Menor</option>
-  </select>
+    <footer>
+        <p>Jéssica Sofia | Loja Online | DIW | 2024</p>
+    </footer>
 
-  <label for="rate-filter">Ordenar por rating:</label>
-  <select id="rate-filter">
-    <option value="asc">Menor para Maior</option>
-    <option value="desc">Maior para Menor</option>
-  </select>
-
-  <label for="search-input">Procurar:</label>
-  <input type="text" id="search-input" placeholder="Procurar por nome...">
-
-</section>
-
-
-
-  <!-- Container para a lista de produtos -->
-  <section id="product-container" class="flex-container">
-    <!-- Os produtos vão ser adicionados aqui dinamicamente pelo JavaScript -->
-  </section>
-
-  <!-- Container para o cesto -->
-  <section id="cart-container" class="grid-container">
-    <!-- Itens do cesto serão exibidos aqui -->
-  </section>  
-
-  <section id="morada" class="text">
-
-  </section>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>2024</p>
-  </footer>
-
-  <!-- Script de Produtos e Principal -->
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
