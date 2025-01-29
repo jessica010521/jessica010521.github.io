@@ -274,12 +274,12 @@ function aplicarFiltros() {
         produtosFiltrados = produtosFiltrados.filter(produto => produto.value.toString().includes(termoBusca));
     }
 
-    // Ordenar por preço
-    const ordem = ordenarPreco.value;
+    // Ordenar por rate
+    const ordem = ordenarPreco.rating;
     if (ordem === 'crescente') {
-        produtosFiltrados.sort((a, b) => a.price - b.price);
+        produtosFiltrados.sort((a, b) => a.rate - b.rate);
     } else if (ordem === 'decrescente') {
-        produtosFiltrados.sort((a, b) => b.price - a.price);
+        produtosFiltrados.sort((a, b) => b.rate - a.rate);
     }
 
 
