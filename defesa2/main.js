@@ -107,6 +107,11 @@ function criarProduto(produto) {
     botaoAdicionar.addEventListener('click', () => {
         adicionarAoCesto(produto);
     });
+    const botaoAdicionarTodos = document.createElement('button');
+    botaoAdicionar.textContent = '+ Adicionar todos ao Cesto';
+    botaoAdicionar.addEventListener('click', () => {
+        adicionarAoCestoTodos(produto);
+    });
 
     artigo.appendChild(titulo);
     artigo.appendChild(imagem);
@@ -118,6 +123,44 @@ function criarProduto(produto) {
     return artigo;
 }
 
+// cria um elemento de produto na seção de produtos
+function criarProdutoImagens(produto) {
+    const artigo = document.createElement('article');
+    artigo.classList.add('produto');
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = produto.title;
+
+    const imagem = document.createElement('img');
+    imagem.src = produto.image;
+    imagem.alt = produto.title;
+
+    const preco = document.createElement('p');
+    preco.textContent = `Preço: ${produto.price.toFixed(2)} €`;
+    preco.classList.add('preco');
+
+    const descricao = document.createElement('p');
+    descricao.textContent = produto.description;
+    descricao.classList.add('descricao');
+
+    const rating = document.createElement('p');
+    rating.classList.add('rating');
+    rating.innerHTML = gerarEstrelas(produto.rating.rate, produto.rating.count);
+
+    const botaoAdicionar = document.createElement('button');
+    botaoAdicionar.textContent = '+ Adicionar ao Cesto';
+    botaoAdicionar.addEventListener('click', () => {
+        adicionarAoCesto(produto);
+    });
+
+    artigo.appendChild(titulo);
+    artigo.appendChild(preco);
+    artigo.appendChild(descricao);
+    artigo.appendChild(rating);
+    artigo.appendChild(botaoAdicionar);
+
+    return artigo;
+}
 // gera estrelas com base no rating
 function gerarEstrelas(rate, count) {
     let estrelas = '★'.repeat(Math.floor(rate));
@@ -130,6 +173,19 @@ function adicionarAoCesto(produto) {
     cesto.push(produto);
     localStorage.setItem('produtos-selecionados', JSON.stringify(cesto));
     atualizarCesto();
+}
+
+function adicionarAoCestoTodos(produto) {
+    let  listaProdutos = 0;
+    let  ProdutoAtual = 0;
+
+    while(ProdutoAtual<=listaProdutos){
+        cesto.push(produto);
+    localStorage.setItem('produtos-selecionados', JSON.stringify(cesto));
+    atualizarCesto();
+    ProdutoAtual++;
+    }
+   
 }
 
 // atualiza a exibição do cesto
@@ -213,9 +269,9 @@ function aplicarFiltros() {
     }
 
     // Procurar por nome
-    const termoBusca = procurarProduto.value.toLowerCase();
+    const termoBusca = procurarProduto.value.toString();
     if (termoBusca) {
-        produtosFiltrados = produtosFiltrados.filter(produto => produto.title.toLowerCase().includes(termoBusca));
+        produtosFiltrados = produtosFiltrados.filter(produto => produto.value.toString().includes(termoBusca));
     }
 
     // Ordenar por preço
@@ -225,7 +281,18 @@ function aplicarFiltros() {
     } else if (ordem === 'decrescente') {
         produtosFiltrados.sort((a, b) => b.price - a.price);
     }
-    carregarProdutos(produtosFiltrados);
+
+
+     // Botão para remover do cesto
+     const botaoRemoverImagem = document.createElement('button');
+     botaoRemoverImagem.textContent = '- Remover Imagens';
+     botaoRemoverImagem.classList.add('botao-removerimagem');
+     botaoRemoverImagem.addEventListener('click', () => {
+         criarProdutoImagens(index);
+         carregarProdutos(index);
+     });
+
+    
 }
 
 function comprar() {
@@ -249,6 +316,8 @@ function comprar() {
         student: isEstudante,
         coupon: cupom
     };
+    const name =document.getElementById('por-nome');
+    
 
     // Envia o POST para o endpoint /buy
     fetch('https://deisishop.pythonanywhere.com/buy', {
@@ -287,6 +356,7 @@ function mostrarSucesso(data) {
     mensagemCompraP.innerHTML = `
         Valor final a pagar (com eventuais descontos): ${totalCost} €<br>
         Referência de Pagamento: ${reference}
+        Message
     `;
 }
 
